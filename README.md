@@ -6,7 +6,7 @@ Html-en egindako minijokoa
 ```text
 proyecto-videojuego/
 ├── index.html                  # Menú de inicio del juego
-├── Civeles.html                # Menú de selección de niveles/jefes
+├── Niveles.html                # Menú de selección de niveles/jefes
 │
 ├── Css/                        # Estilos globales y específicos
 │   ├── Main.css                # Estilos globales (fuentes, colores, botones comunes)
@@ -40,23 +40,23 @@ proyecto-videojuego/
 │   └── Audio/                  # Música y efectos de sonido
 │
 └── Orriak/                     # Páginas de los jefes
-    ├── jefe-1/
+    ├── Jefe1/
     │   ├── introduccion.html   # Pág 1: Historia / Presentación
     │   ├── combate.html         # Pág 2: Batalla / Preguntas
     │   └── victoria.html        # Pág 3: Derrota del jefe / Recompensa
-    ├── jefe-2/
+    ├── Jefe2/
     │   ├── introduccion.html
     │   ├── combate.html
     │   └── victoria.html
-    ├── jefe-3/
+    ├── Jefe3/
     │   ├── introduccion.html
     │   ├── combate.html
     │   └── victoria.html
-    ├── jefe-4/
+    ├── Jefe4/
     │   ├── introduccion.html
     │   ├── combate.html
     │   └── victoria.html
-    └── jefe-5/
+    └── Jefe5/
         ├── introduccion.html
         ├── combate.html
         └── victoria.html
