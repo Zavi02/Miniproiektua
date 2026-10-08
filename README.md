@@ -1,10 +1,10 @@
 # Miniproiektua
 Html-en egindako minijokoa
 
+## Karpeten Estructura
 
-# Karpeten Estructura
+```text
 proyecto-videojuego/
-│
 ├── index.html                  # Menú de inicio del juego
 ├── Civeles.html                # Menú de selección de niveles/jefes
 │
@@ -18,7 +18,7 @@ proyecto-videojuego/
 │       ├── Jefe4.css
 │       └── Jefe5.css
 │
-├── Js/                         # Lógica del juego y Scripts
+├── Js/                         # Lógica del juego y scripts
 │   ├── Main.js                 # Lógica global (sonidos globales, guardar progreso)
 │   ├── Preguntas.js            # Base de datos de preguntas por jefe
 │   └── Jefes/                  # Lógica individual de cada integrante
@@ -30,8 +30,8 @@ proyecto-videojuego/
 │
 ├── Assets/                     # Archivos multimedia (imágenes, audios)
 │   ├── Img/
-│   │   ├── Fondos/                 # Botones, fondos de menú, logos
-│   │   └── Jefes/                  # Sprites / imágenes de cada jefe
+│   │   ├── Fondos/             # Botones, fondos de menú, logos
+│   │   └── Jefes/              # Sprites / imágenes de cada jefe
 │   │       ├── Jefe1/
 │   │       ├── Jefe2/
 │   │       ├── Jefe3/
@@ -39,11 +39,11 @@ proyecto-videojuego/
 │   │       └── Jefe5/
 │   └── Audio/                  # Música y efectos de sonido
 │
-└── Orriak/                    # Páginas de los jefes
+└── Orriak/                     # Páginas de los jefes
     ├── jefe-1/
     │   ├── introduccion.html   # Pág 1: Historia / Presentación
-    │   ├── combate.html        # Pág 2: Batalla / Preguntas
-    │   └── victoria.html       # Pág 3: Derrota del jefe / Recompensa
+    │   ├── combate.html         # Pág 2: Batalla / Preguntas
+    │   └── victoria.html        # Pág 3: Derrota del jefe / Recompensa
     ├── jefe-2/
     │   ├── introduccion.html
     │   ├── combate.html
@@ -60,3 +60,4 @@ proyecto-videojuego/
         ├── introduccion.html
         ├── combate.html
         └── victoria.html
+```
