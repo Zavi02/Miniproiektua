@@ -9,7 +9,7 @@ proyecto-videojuego/
 ├── Niveles.html                # Menú de selección de niveles/jefes
 │
 ├── Css/                        # Estilos globales y específicos
-│   ├── Main.css2                # Estilos globales (fuentes, colores, botones comunes)
+│   ├── Main.css                # Estilos globales (fuentes, colores, botones comunes)
 │   ├── Menus.css               # Estilos para inicio y selección de niveles
 │   └── Jefes/                  # Estilos individuales por jefe
 │       ├── Jefe1.css
