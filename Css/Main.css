@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Verdana, sans-serif;
+  color: #fff;
+  background: #04121a;
+}
+
+/* Cambia "fondo.jpg" por el nombre de tu foto (misma carpeta) */
+.pantalla {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  background:
+    linear-gradient(rgba(4, 18, 26, 0.35), rgba(4, 18, 26, 0.6)),
+    url("fondo.jpg") center / cover no-repeat,
+    #04121a;
+}
+
+.sello {
+  margin: 0;
+  color: #8fb4d8;
+  font-weight: 600;
+}
+
+.titulo {
+  margin: 1.5rem 0 0;
+  font-size: clamp(3rem, 10vw, 9rem);
+  line-height: 1;
+}
+
+.titulo span {
+  display: block;
+  color: #2fdcf5;
+}
+
+.lema {
+  margin: 1rem 0 0;
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  font-weight: 700;
+}
+
+.gaiak {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.boton {
+  --color: #1fc3f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.2rem 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(5, 13, 26, 0.9);
+  border: 3px solid var(--color);
+  border-radius: 6px;
+}
+
+.boton span {
+  color: var(--color);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.boton:hover,
+.boton:focus-visible {
+  background: var(--color);
+  color: #04121a;
+}
+
+.boton:hover span,
+.boton:focus-visible span {
+  color: #04121a;
+}
+
+.boton--itsasoa  { --color: #1fc3f0; }
+.boton--gosea    { --color: #f5a623; }
+.boton--pobrezia { --color: #ff4d6a; }
+.boton--energia  { --color: #ffd21f; }
+.boton--klima    { --color: #4cc257; }
