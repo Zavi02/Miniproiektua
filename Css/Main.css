@@ -91,7 +91,9 @@ body {
 .boton--klima    { --color: #4cc257; }
 
 .boton-jugar {
-  align-self: flex-start;
+  position:absolute;
+  top:2rem;
+  right: 2rem;
   padding: 0.9rem 2.5rem;
   font-size: 1.3rem;
   font-weight: 700;
@@ -104,6 +106,9 @@ body {
 
 .boton-jugar:hover,
 .boton-jugar:focus-visible {
+  position: relative;
+  top:25rem;
+  right: 2rem;
   background: transparent;
   color: #2fdcf5;
 }
