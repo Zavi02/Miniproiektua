@@ -89,3 +89,21 @@ body {
 .boton--pobrezia { --color: #ff4d6a; }
 .boton--energia  { --color: #ffd21f; }
 .boton--klima    { --color: #4cc257; }
+
+.boton-jugar {
+  align-self: flex-start;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #04121a;
+  background: #2fdcf5;
+  border: 3px solid #2fdcf5;
+  border-radius: 6px;
+}
+
+.boton-jugar:hover,
+.boton-jugar:focus-visible {
+  background: transparent;
+  color: #2fdcf5;
+}
