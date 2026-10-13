@@ -9,7 +9,7 @@ body {
   background: #04121a;
 }
 
-/* Cambia "fondo.jpg" por el nombre de tu foto (misma carpeta) */
+
 .pantalla {
   min-height: 100vh;
   display: flex;
@@ -104,11 +104,3 @@ body {
   border-radius: 6px;
 }
 
-.boton-jugar:hover,
-.boton-jugar:focus-visible {
-  position: relative;
-  top:25rem;
-  right: 2rem;
-  background: transparent;
-  color: #2fdcf5;
-}
