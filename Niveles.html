@@ -1,10 +1,76 @@
-<a href="unaiey/Subnormal.htmlwqeqeqwdd" style="width:150px; height:150px; border-radius:50%; 
-background-color:rgba(0,0,0,0.5)" 
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nibela aukeratu</title>
+  <style>
+    html, body { margin: 0; background: #06101c; }
 
-<div style=" border:2px solid #00e5ff; padding:16px; border-radius:12px; width:260px;">
-  <img src="https://www.policlinicagipuzkoa.com/wp-content/uploads/2014/07/Telmo_Irizar.jpg"
-    style="width:50%; border-radius:200%;">
-  </div>
-  </div>
+    .nibelak {
+      position: relative;      /* referencia para los hotspots */
+      max-width: 1672px;
+      margin: 0 auto;
+    }
+    .nibelak img { display: block; width: 100%; height: auto; }
 
-</a>
+    .hotspot {
+      position: absolute;
+      top: 22.8%;
+      width: 18.5%;
+      height: 32%;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: box-shadow .25s, transform .25s;
+      --glow: 255, 255, 255;
+    }
+    .hotspot:hover,
+    .hotspot:focus-visible {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px 10px rgba(var(--glow), .65);
+      outline: none;
+    }
+
+    /* Posición horizontal + color de brillo de cada círculo */
+    .n1 { left: 1.0%;  --glow: 0, 229, 255; }
+    .n2 { left: 20.8%; --glow: 255, 170, 0; }
+    .n3 { left: 40.7%; --glow: 255, 40, 70; }
+    .n4 { left: 60.6%; --glow: 255, 205, 0; }
+    .n5 { left: 80.3%; --glow: 40, 200, 80; }
+
+    /* Tooltip con el nombre */
+    .hotspot::after {
+      content: attr(data-nombre);
+      position: absolute;
+      bottom: 105%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, .85);
+      color: #fff;
+      font: 600 clamp(11px, 1.2vw, 16px) system-ui, sans-serif;
+      padding: .3em .7em;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+    .hotspot:hover::after,
+    .hotspot:focus-visible::after { opacity: 1; }
+
+    /* DEBUG: descomenta para ver las zonas y ajustarlas */
+    /* .hotspot { outline: 2px dashed red; background: rgba(255,0,0,.15); } */
+  </style>
+</head>
+<body>
+  <div class="nibelak">
+    <img src="Nibelak_editado.png" alt="Nibela aukeratu">
+
+    <a class="hotspot n1" href="nibela1.html" data-nombre="Itsas bizitza" aria-label="Nibel 1: Itsas bizitza"></a>
+    <a class="hotspot n2" href="nibela2.html" data-nombre="Goseakin bukatu" aria-label="Nibel 2: Goseakin bukatu"></a>
+    <a class="hotspot n3" href="nibela3.html" data-nombre="Pobreziaren amaiera" aria-label="Nibel 3: Pobreziaren amaiera"></a>
+    <a class="hotspot n4" href="nibela4.html" data-nombre="Energia garbia" aria-label="Nibel 4: Energia garbia"></a>
+    <a class="hotspot n5" href="nibela5.html" data-nombre="Klimaren aldeko ekintza" aria-label="Nibel 5: Klimaren aldeko ekintza"></a>
+  </div>
+</body>
+</html>
