@@ -4,56 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nibela aukeratu</title>
-  <style>
-    html, body { margin: 0; background: #06101c; }
+ <head>
+  <link rel="stylesheet" href="/Css/Nibelak.css">
+ </head>
 
-    .nibelak {
-      position: relative;      /* referencia para los hotspots */
-      max-width: 1672px;
-      margin: 0 auto;
-    }
-    .nibelak img { display: block; width: 100%; height: auto; }
-
-    .hotspot {
-      position: absolute;
-      top: 22.8%;
-      width: 18.5%;
-      height: 32%;
-      border-radius: 50%;
-      cursor: pointer;
-      outline: none;
-    }
-
-    /* Posición horizontal de cada círculo */
-    .n1 { left: 1.0%; }
-    .n2 { left: 20.8%; }
-    .n3 { left: 40.7%; }
-    .n4 { left: 60.6%; }
-    .n5 { left: 80.3%; }
-
-    /* Tooltip con el nombre */
-    .hotspot::after {
-      content: attr(data-nombre);
-      position: absolute;
-      bottom: 105%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 0, 0, .85);
-      color: #fff;
-      font: 600 clamp(11px, 1.2vw, 16px) system-ui, sans-serif;
-      padding: .3em .7em;
-      border-radius: 6px;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-    }
-    .hotspot:hover::after,
-    .hotspot:focus-visible::after { opacity: 1; }
-
-    /* DEBUG: descomenta para ver las zonas y ajustarlas */
-    /* .hotspot { outline: 2px dashed red; background: rgba(255,0,0,.15); } */
-  </style>
-</head>
 <body>
   <div class="nibelak">
     <img src="/Assets/Img/Fondos/Nibelak_editado.png" alt="Nibela aukeratu">
