@@ -22,8 +22,7 @@ body {
   font-family: var(--testua);
   font-size: 22px;
   color: #fff;
-  background: #1a1420 url("/Miniproiektua/Assets/Img/Jefes/Jefe3/eszenatokia.png") center bottom / cover no-repeat fixed;
-  image-rendering: pixelated;
+  background: #1a1420 url("/Miniproiektua/Assets/Img/Jefes/Jefe3/eszenatokia.gif") center bottom / cover no-repeat fixed;
   overflow: hidden;
 }
 
@@ -475,6 +474,10 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   z-index: 1;
   animation: txandakatu calc(var(--n) * 50ms) steps(1) infinite;
   animation-delay: calc(var(--i) * -50ms);
+}
+
+.ausazko-botoiak:hover .ausazkoa {
+  animation-play-state: paused;
 }
 
 @keyframes txandakatu {
