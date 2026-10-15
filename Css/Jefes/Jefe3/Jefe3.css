@@ -22,7 +22,7 @@ body {
   font-family: var(--testua);
   font-size: 22px;
   color: #fff;
-  background: #1a1420 url("/Miniproiektua/Assets/Img/Jefes/Jefe3/eszenatokia.gif") center bottom / cover no-repeat fixed;
+  background: #1a1420 url("/Assets/Img/Jefes/Jefe3/eszenatokia.gif") center bottom / cover no-repeat fixed;
   overflow: hidden;
 }
 
