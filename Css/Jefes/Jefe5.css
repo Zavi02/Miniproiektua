@@ -1,0 +1,229 @@
+
+:root {
+   
+    --urdin-iluna: #101c2c;             
+    --urdin-iluna: #071525;              
+    --urdin-iluna-zeharrargia-40: #07152566;
+    --urdin-iluna-zeharrargia-87: #071525dd;
+    --urdin-iluna-panela: #071525ed;
+    --urdin-iluna-itxia: #071525ee;
+
+    --zuria: white;
+    --zuri-zeharrargia: #ffffff66;
+
+    --zeru-urdin-distira: #00cfff88;     
+    --zeru-urdin-ertza: #7ccfff88;
+
+    --haragi-kolorea: #ffad85;        
+    --urdin-botoia: #263f59;
+    --urdin-botoia-ertza: #6c8aa6;
+    --urdin-botoia-gainean: #365b7d;
+
+    --berde-iluna: #1f6b3a;              
+    --berde-argia: #5fe38f;
+
+    --gorri-iluna: #7a2430;              
+    --gorri-argia: #ff7a8a;
+
+
+    --tarte-txikia: 6px;
+    --tarte-ertaina: 10px;
+    --tarte-handia: 16px;
+    --tarte-oso-handia: 20px;
+
+    --biribiltze-txikia: 10px;
+    --biribiltze-ertaina: 12px;
+    --biribiltze-handia: 18px;
+
+    --bihotz-tamaina: 24px;
+    --buruzagi-zabalera: min(530px, 185vw);
+    --buruzagi-altuera-max: 30vh;
+    --galderen-zabalera-max: 850px;
+    --galderen-altuera-max: 70vh;
+
+    --trantsizio-denbora: .3s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: var(--zuria);
+    background: var(--urdin-iluna) url("/Assets/Img/Jefes/Jefe5/eszenatokia_euria.gif") center / cover fixed no-repeat;
+}
+
+.jokoa {
+    min-height: 100vh;
+    padding: var(--tarte-handia);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+        to bottom,
+        var(--urdin-iluna-zeharrargia-40),
+        transparent 40%,
+        var(--urdin-iluna-itxia)
+    );
+}
+
+
+.bizitzak {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--biribiltze-ertaina);
+}
+
+.bizitza {
+    padding: var(--tarte-ertaina);
+    text-align: center;
+    background: var(--urdin-iluna-zeharrargia-87);
+    border: 1px solid var(--zuri-zeharrargia);
+    border-radius: var(--biribiltze-ertaina);
+}
+
+.bihotzak {
+    margin-top: var(--tarte-txikia);
+    font-size: var(--bihotz-tamaina);
+    letter-spacing: 3px;
+}
+
+.bihotzak span {
+    display: inline-block;
+    transition: filter var(--trantsizio-denbora), transform var(--trantsizio-denbora), opacity var(--trantsizio-denbora);
+}
+
+
+.buruzagia {
+    flex: 1;
+    min-height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buruzagia img {
+    width: var(--buruzagi-zabalera);
+    max-height: var(--buruzagi-altuera-max);
+    object-fit: contain;
+    filter: drop-shadow(0 0 18px var(--zeru-urdin-distira));
+}
+
+
+.galderak {
+    width: 100%;
+    max-width: var(--galderen-zabalera-max);
+    margin: auto auto 0;
+    align-self: center;
+    padding: var(--tarte-oso-handia);
+    text-align: center;
+    background: var(--urdin-iluna-panela);
+    border: 1px solid var(--zeru-urdin-ertza);
+    border-radius: var(--biribiltze-handia) var(--biribiltze-handia) 0 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    max-height: var(--galderen-altuera-max);
+    overflow-y: auto;
+}
+
+
+.panel {
+    display: none;
+}
+
+.panel:target {
+    display: block;
+}
+
+
+.panel.hasiera {
+    display: block;
+}
+
+
+.jokoa:has(.panel:target:not(.hasiera)) .panel.hasiera {
+    display: none;
+}
+
+.galdera-zenbakia {
+    color: var(--haragi-kolorea);
+    font-weight: bold;
+}
+
+.aukerak {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tarte-ertaina);
+}
+
+.aukerak a,
+.berrabiarazi {
+    display: block;
+    padding: 13px;
+    color: var(--zuria);
+    background: var(--urdin-botoia);
+    border: 2px solid var(--urdin-botoia-ertza);
+    border-radius: var(--biribiltze-txikia);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.aukerak a:hover,
+.berrabiarazi:hover {
+    background: var(--urdin-botoia-gainean);
+    border-color: var(--haragi-kolorea);
+}
+
+.berrabiarazi {
+    max-width: 260px;
+    margin: var(--tarte-handia) auto 0;
+}
+
+
+.feedback {
+    margin-bottom: 14px;
+    padding: var(--biribiltze-ertaina);
+    border-radius: var(--biribiltze-txikia);
+    line-height: 1.5;
+}
+
+.feedback.zuzena {
+    background: var(--berde-iluna);
+    border: 1px solid var(--berde-argia);
+}
+
+.feedback.okerra {
+    background: var(--gorri-iluna);
+    border: 1px solid var(--gorri-argia);
+}
+
+
+.jokoa:has(.w1:target) .p3,
+.jokoa:has(.w2:target) .p2,
+.jokoa:has(.w2:target) .p3,
+.jokoa:has(.w3:target) .p1,
+.jokoa:has(.w3:target) .p2,
+.jokoa:has(.w3:target) .p3,
+
+.jokoa:has(.b0:target) .e1,
+.jokoa:has(.b0:target) .e2,
+.jokoa:has(.b0:target) .e3,
+.jokoa:has(.b0:target) .e4,
+.jokoa:has(.b0:target) .e5,
+.jokoa:has(.b1:target) .e2,
+.jokoa:has(.b1:target) .e3,
+.jokoa:has(.b1:target) .e4,
+.jokoa:has(.b1:target) .e5,
+.jokoa:has(.b2:target) .e3,
+.jokoa:has(.b2:target) .e4,
+.jokoa:has(.b2:target) .e5,
+.jokoa:has(.b3:target) .e4,
+.jokoa:has(.b3:target) .e5,
+.jokoa:has(.b4:target) .e5 {
+    filter: grayscale(1);
+    opacity: .25;
+    transform: scale(.8);
+}
