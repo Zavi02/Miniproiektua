@@ -53,12 +53,12 @@ section:target {
 a {
   display: block;
   background: teal;
-  color: white;
+  color: rgb(139, 28, 0);
   padding: 10px;
   margin: 8px 0;
   text-decoration: none;
 }
 
 a:hover {
-  background: darkcyan;
+  background: rgb(139, 28, 0);
 }
