@@ -477,6 +477,10 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   animation-delay: calc(var(--i) * -50ms);
 }
 
+.ausazko-botoiak:hover .ausazkoa {
+  animation-play-state: paused;
+}
+
 @keyframes txandakatu {
   0%   { z-index: 5; }
   10%  { z-index: 1; }
