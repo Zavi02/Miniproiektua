@@ -1,10 +1,3 @@
-/* =========================================================
-   JEFE 3 - DOLAR GAIZTOA (1. GIHa: Pobreziarik ez)
-   HTML + CSS bakarrik, JS gabe.
-   Jokoaren egoera Combate.html-eko input ezkutuetan dago eta
-   CSSak :has() eta :nth-child(n of :checked) erabiliz irakurtzen du.
-   ========================================================= */
-
 :root {
   --berdea: #b8d99a;
   --berde-iluna: #1f3a1c;
@@ -29,12 +22,11 @@ body {
   font-family: var(--testua);
   font-size: 22px;
   color: #fff;
-  background: #1a1420 url("/Assets/Img/Jefes/Jefe3/eszenatokia.png") center bottom / cover no-repeat fixed;
+  background: #1a1420 url("/Miniproiektua/Assets/Img/Jefes/Jefe3/eszenatokia.png") center bottom / cover no-repeat fixed;
   image-rendering: pixelated;
   overflow: hidden;
 }
 
-/* Iluntze arina eszenatokiaren gainean, testua ondo irakurtzeko */
 body::before {
   content: "";
   position: fixed;
@@ -43,7 +35,6 @@ body::before {
   pointer-events: none;
 }
 
-/* ---------- BOTOIAK ---------- */
 .botoia {
   display: inline-block;
   font-family: var(--pixel);
@@ -67,10 +58,6 @@ body::before {
   box-shadow: inset -4px -4px 0 #c7951e, 0 2px 0 #0b140a;
 }
 
-/* =========================================================
-   BORROKA (Combate.html)
-   ========================================================= */
-
 .jokoa {
   position: fixed;
   inset: 0;
@@ -81,7 +68,6 @@ body::before {
   counter-reset: zenbakia 1;
 }
 
-/* Egoera gordetzen duten input-ak ez dira ikusten (baina label-ekin markatzen dira) */
 .jokoa input {
   position: fixed;
   top: 0;
@@ -92,7 +78,6 @@ body::before {
   visibility: hidden;
 }
 
-/* Galdera-zenbakia: JARRAITU sakatutako galderak zenbatzen ditu */
 .ikusita:checked {
   counter-increment: zenbakia;
 }
@@ -101,7 +86,6 @@ body::before {
   content: counter(zenbakia) ". GALDERA";
 }
 
-/* ---------- HUD: bizitzak (bihotz emojiak) ---------- */
 .hud {
   display: flex;
   justify-content: space-between;
@@ -141,42 +125,18 @@ body::before {
   content: var(--bihotza, "💚");
 }
 
-/* Bihotz bat galdutakoan: 🖤 jarri, 💔 bat erori eta ertz argia eman */
-.bizitzak i::after {
-  content: var(--hautsia, none);
-  position: absolute;
-  left: 0;
-  top: 0;
-  animation: bihotz-hautsia 1s ease-out both;
-}
-
-/* Bossaren bihotzak: zenbat erantzun zuzen, hainbat bihotz beltz (eskuinetik) */
 body:has(.kartak > :nth-child(1 of .zuzena:checked)) .burua i:nth-of-type(5),
 body:has(.kartak > :nth-child(2 of .zuzena:checked)) .burua i:nth-of-type(4),
 body:has(.kartak > :nth-child(3 of .zuzena:checked)) .burua i:nth-of-type(3),
 body:has(.kartak > :nth-child(4 of .zuzena:checked)) .burua i:nth-of-type(2),
 body:has(.kartak > :nth-child(5 of .zuzena:checked)) .burua i:nth-of-type(1),
-/* Jokalariaren bihotzak: zenbat erantzun oker, hainbat bihotz beltz */
 body:has(.kartak > :nth-child(1 of .okerra:checked)) .jokalaria i:nth-of-type(3),
 body:has(.kartak > :nth-child(2 of .okerra:checked)) .jokalaria i:nth-of-type(2),
 body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1) {
   --bihotza: "🖤";
-  --hautsia: "💔";
   filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff);
-  animation: bizitza-galdu 0.9s steps(6) both;
 }
 
-@keyframes bizitza-galdu {
-  0%, 40% { opacity: 0; }
-  100%    { opacity: 1; }
-}
-
-@keyframes bihotz-hautsia {
-  0%   { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(26px); opacity: 0; }
-}
-
-/* ---------- ESZENA: bossa ---------- */
 .eszena {
   position: relative;
   flex: 1;
@@ -199,7 +159,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1)
   animation: arnasa 1.6s ease-in-out infinite;
 }
 
-/* Arnasa (idle) */
 @keyframes arnasa {
   0%, 100% { transform: translateY(0) rotate(0); }
   25%      { transform: translateY(-8px) rotate(-1.5deg); }
@@ -207,7 +166,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1)
   75%      { transform: translateY(-8px) rotate(1.5deg); }
 }
 
-/* Itzala lurrean */
 .itzala {
   position: absolute;
   bottom: -6px;
@@ -225,7 +183,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1)
   50%      { transform: scaleX(0.8); opacity: 0.6; }
 }
 
-/* Aura berdea atzean */
 .aura {
   position: absolute;
   bottom: 0;
@@ -242,25 +199,10 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1)
   50%      { opacity: 1;   transform: translateX(-50%) scale(1.05); }
 }
 
-/* Efektuak ezkutatuta egoten dira, dagokien egoeran agertu arte */
-.kolpea,
-.kalte,
-.tiroa,
-.zati,
-.bunbuiloa,
-.flash-gorria {
+.bunbuiloa {
   display: none;
 }
 
-/* =========================================================
-   EGOERAK
-   - Asmatu berria:  .zuzena:checked + .okerra + .ikusita:not(:checked)
-   - Huts berria:    .okerra:checked + .ikusita:not(:checked)
-   - Irabazi:        5 zuzen eta JARRAITU sakatuta
-   - Galdu:          3 oker eta JARRAITU sakatuta
-   ========================================================= */
-
-/* --- Hasiera: bidea aukeratu arte --- */
 .hasiera {
   display: block;
 }
@@ -275,243 +217,31 @@ body:has(.bidea:checked):not(:has(.ikusita:checked, .zuzena:checked, .okerra:che
   display: block;
 }
 
-/* --- Asmatu berria: bossak kolpea jasotzen du --- */
-body:has(.zuzena:checked + .okerra + .ikusita:not(:checked)) .dolarra {
-  animation: zauritu 0.9s steps(1) both, arnasa 1.6s 0.9s ease-in-out infinite;
-}
-
-body:has(.zuzena:checked + .okerra + .ikusita:not(:checked)) :is(.kolpea, .kalte, .b-ondo) {
+body:has(.zuzena:checked + .okerra + .ikusita:not(:checked)) .b-ondo,
+body:has(.okerra:checked + .ikusita:not(:checked)) .b-gaizki {
   display: block;
 }
 
-/* --- Huts berria: bossak erasotzen dizu --- */
-body:has(.okerra:checked + .ikusita:not(:checked)) .dolarra {
-  animation: erasotu 1s ease-in-out both, arnasa 1.6s 1s ease-in-out infinite;
-}
-
-body:has(.okerra:checked + .ikusita:not(:checked)) :is(.flash-gorria, .b-gaizki) {
-  display: block;
-}
-
-body:has(.okerra:checked + .ikusita:not(:checked)) .tiroa {
-  display: grid;
-}
-
-body:has(.okerra:checked + .ikusita:not(:checked)) .jokoa {
-  animation: dardara 0.4s 0.95s steps(2) both;
-}
-
-/* --- Irabazi: 5 zuzen eta azken azalpena ikusita --- */
 .irabazi,
 .galdu {
   display: none;
 }
 
-body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + .okerra + .ikusita:not(:checked))) :is(.irabazi, .b-irabazi, .zati) {
+body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + .okerra + .ikusita:not(:checked))) :is(.irabazi, .b-irabazi),
+body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + .ikusita:not(:checked))) :is(.galdu, .b-galdu) {
   display: block;
 }
 
-body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + .okerra + .ikusita:not(:checked))) .galdera-kutxa {
-  display: none;
-}
-
-body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + .okerra + .ikusita:not(:checked))) .dolarra {
-  animation: hil 2.4s ease-in both;
-}
-
-body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + .okerra + .ikusita:not(:checked))) :is(.aura, .itzala) {
-  animation: desagertu 1.5s 1s both;
-}
-
-/* --- Galdu: 3 oker eta azken azalpena ikusita --- */
-body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + .ikusita:not(:checked))) :is(.galdu, .b-galdu, .flash-gorria) {
-  display: block;
-}
-
+body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + .okerra + .ikusita:not(:checked))) .galdera-kutxa,
 body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + .ikusita:not(:checked))) .galdera-kutxa {
   display: none;
 }
 
-body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + .ikusita:not(:checked))) .dolarra {
-  animation: barrez 0.3s steps(2) infinite;
-  filter: drop-shadow(0 0 20px red);
+body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + .okerra + .ikusita:not(:checked))) .dolarra {
+  filter: grayscale(1);
+  opacity: 0.4;
 }
 
-body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + .ikusita:not(:checked))) .flash-gorria {
-  animation: flash-gorria-iraun 1s both;
-}
-
-/* ---------- ANIMAZIOAK ---------- */
-
-/* ZAURITU: asmatu duzu, bossak kolpea jaso du */
-@keyframes zauritu {
-  0%   { transform: translateX(0);                   filter: brightness(4) saturate(0); }
-  12%  { transform: translateX(-28px) rotate(-6deg); filter: sepia(1) saturate(8) hue-rotate(-50deg); }
-  24%  { transform: translateX(22px) rotate(5deg);   filter: brightness(4) saturate(0); }
-  36%  { transform: translateX(-16px) rotate(-3deg); filter: sepia(1) saturate(8) hue-rotate(-50deg); }
-  48%  { transform: translateX(10px);                filter: brightness(4) saturate(0); }
-  60%  { transform: translateX(-4px);                filter: none; opacity: 0.4; }
-  72%  { transform: translateX(0);                   opacity: 1; }
-  84%  { opacity: 0.4; }
-  100% { transform: none; filter: none; opacity: 1; }
-}
-
-/* Kolpearen distira */
-.kolpea {
-  position: absolute;
-  z-index: 3;
-  left: 50%;
-  bottom: 40%;
-  width: 260px;
-  height: 260px;
-  margin-left: -130px;
-  background:
-    linear-gradient(135deg, transparent 46%, #fff 47%, #fff 53%, transparent 54%),
-    radial-gradient(circle, #fff 0 12%, var(--urrea) 13% 22%, transparent 23%);
-  animation: kolpea 0.5s steps(5) both;
-  pointer-events: none;
-}
-
-@keyframes kolpea {
-  from { transform: scale(0.2) rotate(0); opacity: 1; }
-  to   { transform: scale(1.6) rotate(25deg); opacity: 0; }
-}
-
-/* -1 testua gora */
-.kalte {
-  position: absolute;
-  z-index: 4;
-  left: 58%;
-  bottom: 60%;
-  font-family: var(--pixel);
-  font-size: 34px;
-  color: var(--urrea);
-  text-shadow: 4px 4px 0 #000;
-  animation: kalte 1.2s ease-out both;
-}
-
-@keyframes kalte {
-  0%   { transform: translateY(20px) scale(0.5); opacity: 0; }
-  20%  { transform: translateY(0) scale(1.3);    opacity: 1; }
-  100% { transform: translateY(-90px) scale(1);  opacity: 0; }
-}
-
-/* ERASOTU: huts egin duzu, bossak erasotzen dizu */
-@keyframes erasotu {
-  0%   { transform: none; }
-  30%  { transform: translateY(-20px) scale(0.9) rotate(5deg); filter: brightness(0.6); }
-  45%  { transform: translateY(30px) scale(1.35) rotate(-4deg); filter: brightness(1.3) drop-shadow(0 0 20px red); }
-  65%  { transform: translateY(30px) scale(1.35) rotate(-4deg); filter: brightness(1.3) drop-shadow(0 0 20px red); }
-  100% { transform: none; }
-}
-
-/* Txanpon-tiroak jokalariaren aurka */
-.tiroa {
-  position: absolute;
-  z-index: 5;
-  left: 50%;
-  bottom: 45%;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  place-items: center;
-  font-family: var(--pixel);
-  font-size: 18px;
-  color: #8a6410;
-  background: var(--urrea);
-  border: 4px solid #8a6410;
-  box-shadow: 0 0 14px var(--urrea);
-  opacity: 0;
-  animation: tiroa 0.7s ease-in both;
-}
-
-.t1 { --x: -45vw; --y: 35vh; animation-delay: 0.4s; }
-.t2 { --x: 0vw;   --y: 45vh; animation-delay: 0.5s; }
-.t3 { --x: 40vw;  --y: 30vh; animation-delay: 0.6s; }
-
-@keyframes tiroa {
-  0%   { opacity: 1; transform: translate(-50%, 0) scale(0.4) rotate(0); }
-  100% { opacity: 0; transform: translate(calc(-50% + var(--x)), var(--y)) scale(3.5) rotate(540deg); }
-}
-
-/* Pantaila gorritu eta dardaratu kolpea jasotzean */
-.flash-gorria {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  pointer-events: none;
-  background: radial-gradient(circle, transparent 35%, rgba(220, 0, 0, 0.75));
-  animation: flash-gorria 0.8s 0.9s steps(4) both;
-}
-
-@keyframes flash-gorria {
-  0%   { opacity: 0; }
-  20%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-@keyframes flash-gorria-iraun {
-  from { opacity: 0; }
-  to   { opacity: 0.8; }
-}
-
-@keyframes dardara {
-  0%, 100% { transform: none; }
-  20% { transform: translate(-12px, 6px); }
-  40% { transform: translate(10px, -8px); }
-  60% { transform: translate(-8px, -4px); }
-  80% { transform: translate(6px, 8px); }
-}
-
-/* HIL: irabazi duzu, bossa lehertu eta zimurtzen da */
-@keyframes hil {
-  0%   { transform: none; filter: brightness(4) saturate(0); }
-  8%   { transform: translateX(-20px) rotate(-5deg); filter: sepia(1) saturate(8) hue-rotate(-50deg); }
-  16%  { transform: translateX(20px) rotate(5deg);   filter: brightness(4) saturate(0); }
-  24%  { transform: translateX(-14px) rotate(-3deg); filter: sepia(1) saturate(8) hue-rotate(-50deg); }
-  32%  { transform: translateX(14px) rotate(3deg);   filter: brightness(4) saturate(0); }
-  45%  { transform: scale(1.1, 0.9) rotate(-8deg);   filter: grayscale(1); }
-  70%  { transform: translateY(20px) scale(0.9, 0.4) rotate(6deg); filter: grayscale(1) brightness(0.6); opacity: 1; }
-  100% { transform: translateY(40px) scale(1.3, 0.02); filter: grayscale(1) brightness(0.3); opacity: 0; }
-}
-
-@keyframes desagertu {
-  to { opacity: 0; }
-}
-
-/* Lehertzean ateratzen diren txanpon zatiak */
-.zati {
-  position: absolute;
-  z-index: 5;
-  left: 50%;
-  bottom: 30%;
-  font-family: var(--pixel);
-  font-size: 28px;
-  color: var(--urrea);
-  text-shadow: 3px 3px 0 #000;
-  opacity: 0;
-  animation: zati 1.4s 1.6s ease-out both;
-}
-
-.z1 { --x: -260px; --y: -220px; }
-.z2 { --x: 240px;  --y: -260px; }
-.z3 { --x: -340px; --y: -60px; }
-.z4 { --x: 320px;  --y: -90px; }
-.z5 { --x: -120px; --y: -320px; }
-.z6 { --x: 140px;  --y: -340px; }
-
-@keyframes zati {
-  0%   { opacity: 1; transform: translate(0, 0) rotate(0); }
-  100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(720deg); }
-}
-
-/* GALDU: bossa barrez */
-@keyframes barrez {
-  0%, 100% { transform: translateY(0) scale(1, 1); }
-  50%      { transform: translateY(-10px) scale(1.04, 0.96); }
-}
-
-/* ---------- BUNBUILOA (bossak hitz egiten du) ---------- */
 .bunbuiloa {
   position: absolute;
   z-index: 6;
@@ -542,7 +272,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + 
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* ---------- GALDERA KUTXA ---------- */
 .galdera-kutxa,
 .amaiera-kutxa {
   position: relative;
@@ -560,7 +289,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + 
   flex-direction: column;
 }
 
-/* Zenbakia DOMean kartak ondoren dago (kontagailuak ondo zenbatzeko), baina goian erakusten da */
 .galdera-zenbakia {
   order: -1;
   margin: 0 0 6px;
@@ -569,7 +297,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + 
   color: var(--urrea);
 }
 
-/* Kartak: lehen ikusi gabeko galdera bakarrik ikusten da (lehen errenkada) */
 .kartak {
   display: grid;
   grid-template-rows: auto;
@@ -588,7 +315,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + 
   display: none;
 }
 
-/* Bide bakoitzak beste galdera batetik hasten da (ausazko BORROKATU botoia) */
 body:has(#b1:checked) .karta:nth-of-type(n+6),
 body:has(#b2:checked) .karta:nth-of-type(n+11),
 body:has(#b3:checked) .karta:nth-of-type(n+16),
@@ -656,7 +382,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   50% { opacity: 0; }
 }
 
-/* Erantzun ondoren: azalpena eta JARRAITU (animazioa bukatzean) */
 .karta .ondo,
 .karta .gaizki,
 .karta .jarraitu {
@@ -672,10 +397,8 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
 .okerra:checked + .ikusita + .karta .jarraitu {
   display: block;
   justify-self: end;
-  animation: kutxa-sartu 0.4s 1.1s ease-out both;
 }
 
-/* Erantzundakoan ezin da berriro aukeratu; zuzena berdez */
 .zuzena:checked + .okerra + .ikusita + .karta label:not(.botoia),
 .okerra:checked + .ikusita + .karta label:not(.botoia) {
   pointer-events: none;
@@ -719,12 +442,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   box-shadow: 0 0 0 2px #ff8a80;
 }
 
-@keyframes kutxa-sartu {
-  from { transform: translateY(20px); opacity: 0; visibility: hidden; }
-  to   { transform: none; opacity: 1; visibility: visible; }
-}
-
-/* ---------- HASIERA eta AMAIERA kutxak ---------- */
 .amaiera-kutxa {
   text-align: center;
 }
@@ -745,16 +462,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   margin: 0 6px;
 }
 
-.irabazi {
-  animation: kutxa-sartu 0.4s 2.4s ease-out both;
-}
-
-.galdu {
-  animation: kutxa-sartu 0.4s 1s ease-out both;
-}
-
-/* Botoi guztiak leku berean daude eta oso azkar txandakatzen dira:
-   klik egiten duzun momentuan goian dagoena da aukeratutako bidea (ausaz). */
 .ausazko-botoiak {
   position: relative;
   width: 280px;
@@ -775,10 +482,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   10%  { z-index: 1; }
   100% { z-index: 1; }
 }
-
-/* =========================================================
-   SARRERA eta AMAIERA orriak (Introduccion.html / Final.html)
-   ========================================================= */
 
 .orria {
   position: relative;
@@ -856,7 +559,6 @@ body.orri-gorputza {
   animation: arnasa 1.6s ease-in-out infinite;
 }
 
-/* Sarrera: bossa eskuinetik sartzen da */
 .sarrera .irudia img {
   animation: boss-sartu 1s steps(8) both, arnasa 1.6s 1s ease-in-out infinite;
 }
@@ -866,7 +568,6 @@ body.orri-gorputza {
   to   { transform: none; opacity: 1; }
 }
 
-/* Final: irabazi / galdu (:target bidez) */
 .emaitza {
   display: none;
 }
@@ -876,7 +577,6 @@ body:not(:has(.emaitza:target)) #irabazi {
   display: flex;
 }
 
-/* Bossa zimurtuta eta grisa (irabazi duzu) */
 .panela .irudia .zimurtua {
   animation: zimurtua 3s ease-in-out infinite;
 }
@@ -887,7 +587,6 @@ body:not(:has(.emaitza:target)) #irabazi {
 }
 
 #galdu .irudia img {
-  animation: barrez 0.3s steps(2) infinite;
   filter: drop-shadow(0 0 20px red);
 }
 
@@ -895,7 +594,6 @@ body:not(:has(.emaitza:target)) #irabazi {
   box-shadow: 0 0 0 4px var(--gorria), 0 0 0 8px #000;
 }
 
-/* ---------- MUGIKORRA ---------- */
 @media (max-width: 700px) {
   body {
     font-size: 19px;
