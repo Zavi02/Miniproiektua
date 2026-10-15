@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dolar Gaiztoa - Borroka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Css/Jefes/Jefe3/Jefe3.css">
+</head>
+<body class="borroka">
+<!--
+  JS gabe egina. Jokoaren egoera input ezkutuetan gordetzen da:
+    - galdera bakoitzak 3 input ditu: zuzena (z), okerra (o) eta ikusita (s, JARRAITU sakatzean).
+    - CSSak zenbatzen ditu markatutako zuzenak eta okerrak (:nth-child(n of :checked)).
+    - "bidea" input-ek galderen hasierako puntua aukeratzen dute (ausaz, BORROKATU botoiarekin).
+  Galdera bat aldatzeko, aldatu hemen bere testua. Erantzun zuzenaren label-ak class="zuz" du.
+-->
+<form class="jokoa" action="#">
+  <input class="bidea" type="radio" name="bidea" id="b0"><input class="bidea" type="radio" name="bidea" id="b1"><input class="bidea" type="radio" name="bidea" id="b2"><input class="bidea" type="radio" name="bidea" id="b3"><input class="bidea" type="radio" name="bidea" id="b4"><input class="bidea" type="radio" name="bidea" id="b5"><input class="bidea" type="radio" name="bidea" id="b6"><input class="bidea" type="radio" name="bidea" id="b7"><input class="bidea" type="radio" name="bidea" id="b8"><input class="bidea" type="radio" name="bidea" id="b9">
+
+  <header class="hud">
+    <div class="bizitzak jokalaria"><span>ZU</span><i></i><i></i><i></i></div>
+    <div class="bizitzak burua"><span>DOLAR GAIZTOA</span><i></i><i></i><i></i><i></i><i></i></div>
+  </header>
+
+  <div class="eszena">
+    <div class="aura"></div>
+    <div class="itzala"></div>
+    <img class="dolarra" src="/Assets/Img/Jefes/Jefe3/dolar_gaiztoa.png" alt="Dolar Gaiztoa">
+    <div class="kolpea"></div>
+    <span class="kalte">-1</span>
+    <span class="tiroa t1">$</span><span class="tiroa t2">$</span><span class="tiroa t3">$</span>
+    <span class="zati z1">$</span><span class="zati z2">¢</span><span class="zati z3">$</span><span class="zati z4">¢</span><span class="zati z5">$</span><span class="zati z6">¢</span>
+    <p class="bunbuiloa b-hasiera">Hahaha! Ni naiz DOLAR GAIZTOA. Pobrezia betiko izango da... ala ezagutzen duzu nire ahulgunea?</p>
+    <p class="bunbuiloa b-ondo">Arrgh! Hori mina eman dit! Ezagutzak ahultzen nau!</p>
+    <p class="bunbuiloa b-gaizki">Hahaha! Ezjakintasuna da nire lagunik onena!</p>
+    <p class="bunbuiloa b-irabazi">Ezzzz! Ezagutzak... pobrezia... garaitu... nau...</p>
+    <p class="bunbuiloa b-galdu">HAHAHA! Pobreziak irabazi du! Zure ezjakintasuna da nire altxorra!</p>
+  </div>
+
+  <!-- Hasiera: botoiak oso azkar txandakatzen dira, klik egitean bide bat ausaz aukeratzen da -->
+  <div class="amaiera-kutxa hasiera">
+    <h2>PRESTATUTA ZAUDE?</h2>
+    <p>Asmatu → Dolar Gaiztoak bihotz bat galtzen du. Huts egin → zuk bat.</p>
+    <div class="ausazko-botoiak" style="--n:10">
+        <label class="botoia ausazkoa" style="--i:0" for="b0">BORROKATU!</label>
+        <label class="botoia ausazkoa" style="--i:1" for="b1">BORROKATU!</label>
+        <label class="botoia ausazkoa" style="--i:2" for="b2">BORROKATU!</label>
+        <label class="botoia ausazkoa" style="--i:3" for="b3">BORROKATU!</label>
+        <label class="botoia ausazkoa" style="--i:4" for="b4">BORROKATU!</label>
+        <label class="botoia ausazkoa" style="--i:5" for="b5">BORROKATU!</label>
+        <label class="botoia ausazkoa" style="--i:6" for="b6">BORROKATU!</label>
+        <label class="botoia ausazkoa" style="--i:7" for="b7">BORROKATU!</label>
+        <label class="botoia ausazkoa" style="--i:8" for="b8">BORROKATU!</label>
+        <label class="botoia ausazkoa" style="--i:9" for="b9">BORROKATU!</label>
+    </div>
+  </div>
+
+  <!-- Galderak: lehen ikusi gabea bakarrik ikusten da -->
+  <div class="galdera-kutxa">
+    <div class="kartak">
+    <input class="zuzena" type="radio" name="g0" id="z0"><input class="okerra" type="radio" name="g0" id="o0"><input class="ikusita" type="checkbox" id="s0">
+    <div class="karta">
+      <h2>Zer da desberdintasun ekonomikoa?</h2>
+      <label class="zuz" for="z0"><b>A</b> Aberastasuna pertsonen artean modu oso desorekatuan banatzea</label>
+      <label for="o0"><b>B</b> Denek diru bera izatea</label>
+      <label for="o0"><b>C</b> Prezioak igotzea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Desberdintasun handiak pobrezia murriztea zailtzen du (10. GIHarekin lotuta).</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Aberastasuna pertsonen artean modu oso desorekatuan banatzea». Desberdintasun handiak pobrezia murriztea zailtzen du (10. GIHarekin lotuta).</p>
+      <label class="botoia jarraitu" for="s0">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g1" id="z1"><input class="okerra" type="radio" name="g1" id="o1"><input class="ikusita" type="checkbox" id="s1">
+    <div class="karta">
+      <h2>Zergatik da garrantzitsua osasun-sistema publikoa pobreziaren aurka?</h2>
+      <label for="o1"><b>A</b> Ez da garrantzitsua</label>
+      <label class="zuz" for="z1"><b>B</b> Gaixotzeak familia bat pobrezian ez sartzeko</label>
+      <label for="o1"><b>C</b> Ospitaleak garestiagoak izateko</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Osasun-gastu handiek milioika familia bultzatzen dituzte pobreziara urtero.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Gaixotzeak familia bat pobrezian ez sartzeko». Osasun-gastu handiek milioika familia bultzatzen dituzte pobreziara urtero.</p>
+      <label class="botoia jarraitu" for="s1">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g2" id="z2"><input class="okerra" type="radio" name="g2" id="o2"><input class="ikusita" type="checkbox" id="s2">
+    <div class="karta">
+      <h2>Zenbat helburu (GIH) ditu Agenda 2030ek?</h2>
+      <label for="o2"><b>A</b> 10</label>
+      <label for="o2"><b>B</b> 25</label>
+      <label class="zuz" for="z2"><b>C</b> 17</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Agenda 2030ek 17 helburu eta 169 xede ditu.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «17». Agenda 2030ek 17 helburu eta 169 xede ditu.</p>
+      <label class="botoia jarraitu" for="s2">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g3" id="z3"><input class="okerra" type="radio" name="g3" id="o3"><input class="ikusita" type="checkbox" id="s3">
+    <div class="karta">
+      <h2>Noiz onartu zuten NBEko herrialdeek Agenda 2030?</h2>
+      <label class="zuz" for="z3"><b>A</b> 2015ean</label>
+      <label for="o3"><b>B</b> 2000n</label>
+      <label for="o3"><b>C</b> 2022an</label>
+      <p class="ondo"><strong>ZUZENA!</strong> NBEko 193 herrialdeek 2015eko irailean onartu zuten.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «2015ean». NBEko 193 herrialdeek 2015eko irailean onartu zuten.</p>
+      <label class="botoia jarraitu" for="s3">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g4" id="z4"><input class="okerra" type="radio" name="g4" id="o4"><input class="ikusita" type="checkbox" id="s4">
+    <div class="karta">
+      <h2>Zer da kontsumo arduratsua?</h2>
+      <label for="o4"><b>A</b> Beti merkeena erostea</label>
+      <label class="zuz" for="z4"><b>B</b> Erosi aurretik produktuaren jatorria eta ekoizleen baldintzak kontuan hartzea</label>
+      <label for="o4"><b>C</b> Ahalik eta gehien erostea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> 12. GIHarekin lotuta: erosten dugunak beste pertsonen bizitzan eragina du.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Erosi aurretik produktuaren jatorria eta ekoizleen baldintzak kontuan hartzea». 12. GIHarekin lotuta: erosten dugunak beste pertsonen bizitzan eragina du.</p>
+      <label class="botoia jarraitu" for="s4">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g5" id="z5"><input class="okerra" type="radio" name="g5" id="o5"><input class="ikusita" type="checkbox" id="s5">
+    <div class="karta">
+      <h2>Zer eskatzen du 1.a xedeak?</h2>
+      <label for="o5"><b>A</b> Herrialde pobreei laguntza kentzea</label>
+      <label for="o5"><b>B</b> Armak erostea</label>
+      <label class="zuz" for="z5"><b>C</b> Baliabideak mobilizatzea herrialde pobreetan pobreziaren aurkako programak ezartzeko</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Lankidetza eta finantzaketa behar dira pobreziaren aurkako politikak egiteko.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Baliabideak mobilizatzea herrialde pobreetan pobreziaren aurkako programak ezartzeko». Lankidetza eta finantzaketa behar dira pobreziaren aurkako politikak egiteko.</p>
+      <label class="botoia jarraitu" for="s5">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g6" id="z6"><input class="okerra" type="radio" name="g6" id="o6"><input class="ikusita" type="checkbox" id="s6">
+    <div class="karta">
+      <h2>Zer dio 1.b xedeak?</h2>
+      <label class="zuz" for="z6"><b>A</b> Pobreen aldeko eta generoa kontuan hartzen duten politikak sortzea</label>
+      <label for="o6"><b>B</b> Politika guztiak ezabatzea</label>
+      <label for="o6"><b>C</b> Zergak kentzea aberatsei</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Politika publikoek pobreak eta emakumeak lehenetsi behar dituzte.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Pobreen aldeko eta generoa kontuan hartzen duten politikak sortzea». Politika publikoek pobreak eta emakumeak lehenetsi behar dituzte.</p>
+      <label class="botoia jarraitu" for="s6">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g7" id="z7"><input class="okerra" type="radio" name="g7" id="o7"><input class="ikusita" type="checkbox" id="s7">
+    <div class="karta">
+      <h2>Zer egin dezakezu zuk pobreziaren aurka?</h2>
+      <label for="o7"><b>A</b> Janaria bota</label>
+      <label class="zuz" for="z7"><b>B</b> Boluntario lan egin, gauzak eman eta kontsumo arduratsua egin</label>
+      <label for="o7"><b>C</b> Ezer ez, ez dagokit</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Ekintza txikiek ere laguntzen dute: elkartasuna eta kontzientzia.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Boluntario lan egin, gauzak eman eta kontsumo arduratsua egin». Ekintza txikiek ere laguntzen dute: elkartasuna eta kontzientzia.</p>
+      <label class="botoia jarraitu" for="s7">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g8" id="z8"><input class="okerra" type="radio" name="g8" id="o8"><input class="ikusita" type="checkbox" id="s8">
+    <div class="karta">
+      <h2>Zergatik dago pobrezia gehiago emakumeen artean?</h2>
+      <label for="o8"><b>A</b> Gutxiago lan egiten dutelako</label>
+      <label for="o8"><b>B</b> Ez dagoelako emakume pobrerik</label>
+      <label class="zuz" for="z8"><b>C</b> Soldata txikiagoak eta ordaindu gabeko zaintza-lan gehiago dituztelako</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Hau &quot;pobreziaren feminizazioa&quot; da: genero-desberdintasunak pobrezia areagotzen du.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Soldata txikiagoak eta ordaindu gabeko zaintza-lan gehiago dituztelako». Hau &quot;pobreziaren feminizazioa&quot; da: genero-desberdintasunak pobrezia areagotzen du.</p>
+      <label class="botoia jarraitu" for="s8">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g9" id="z9"><input class="okerra" type="radio" name="g9" id="o9"><input class="ikusita" type="checkbox" id="s9">
+    <div class="karta">
+      <h2>Zer da pobreziaren &quot;zirkulu zorotsua&quot;?</h2>
+      <label class="zuz" for="z9"><b>A</b> Pobrezian jaiotakoek aukera gutxiago izatea eta pobrezian jarraitzea</label>
+      <label for="o9"><b>B</b> Dirua bankuen artean mugitzea</label>
+      <label for="o9"><b>C</b> Urtero zergak igotzea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Hezkuntza, osasun eta lan aukera gutxiagorekin, pobrezia belaunaldiz belaunaldi transmititzen da.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Pobrezian jaiotakoek aukera gutxiago izatea eta pobrezian jarraitzea». Hezkuntza, osasun eta lan aukera gutxiagorekin, pobrezia belaunaldiz belaunaldi transmititzen da.</p>
+      <label class="botoia jarraitu" for="s9">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g10" id="z10"><input class="okerra" type="radio" name="g10" id="o10"><input class="ikusita" type="checkbox" id="s10">
+    <div class="karta">
+      <h2>Zergatik da kanpo-zorra arazo bat herrialde pobreentzat?</h2>
+      <label for="o10"><b>A</b> Ez da arazo bat</label>
+      <label class="zuz" for="z10"><b>B</b> Zorra ordaintzen gastatzen dutenez, diru gutxiago dute osasun eta hezkuntzarako</label>
+      <label for="o10"><b>C</b> Zorrak aberastu egiten dituelako</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Zorraren interesek zerbitzu publikoetarako dirua kentzen dute.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Zorra ordaintzen gastatzen dutenez, diru gutxiago dute osasun eta hezkuntzarako». Zorraren interesek zerbitzu publikoetarako dirua kentzen dute.</p>
+      <label class="botoia jarraitu" for="s10">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g11" id="z11"><input class="okerra" type="radio" name="g11" id="o11"><input class="ikusita" type="checkbox" id="s11">
+    <div class="karta">
+      <h2>Zer gertatzen da haur batek pobrezian eskola uzten badu?</h2>
+      <label for="o11"><b>A</b> Aberatsago bihurtuko da</label>
+      <label for="o11"><b>B</b> Ez da ezer gertatzen</label>
+      <label class="zuz" for="z11"><b>C</b> Etorkizunean lan on bat lortzeko aukera gutxiago izango ditu</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Eskola uzteak pobreziaren zirkulu zorotsua elikatzen du (4. GIHa).</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Etorkizunean lan on bat lortzeko aukera gutxiago izango ditu». Eskola uzteak pobreziaren zirkulu zorotsua elikatzen du (4. GIHa).</p>
+      <label class="botoia jarraitu" for="s11">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g12" id="z12"><input class="okerra" type="radio" name="g12" id="o12"><input class="ikusita" type="checkbox" id="s12">
+    <div class="karta">
+      <h2>Zerk laguntzen du gehien pobrezia epe luzera murrizten?</h2>
+      <label class="zuz" for="z12"><b>A</b> Kalitatezko hezkuntza guztientzat</label>
+      <label for="o12"><b>B</b> Dirua gehiago inprimatzea</label>
+      <label for="o12"><b>C</b> Mugak ixtea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Hezkuntzak lan hobeak eta diru-sarrera handiagoak ahalbidetzen ditu.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Kalitatezko hezkuntza guztientzat». Hezkuntzak lan hobeak eta diru-sarrera handiagoak ahalbidetzen ditu.</p>
+      <label class="botoia jarraitu" for="s12">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g13" id="z13"><input class="okerra" type="radio" name="g13" id="o13"><input class="ikusita" type="checkbox" id="s13">
+    <div class="karta">
+      <h2>Zein taldek jasaten du muturreko pobrezia gehien?</h2>
+      <label for="o13"><b>A</b> Futbolari profesionalek</label>
+      <label class="zuz" for="z13"><b>B</b> Haurrek: muturreko pobreen ia erdia haurrak dira</label>
+      <label for="o13"><b>C</b> Pentsiodun aberatsek</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Haurrak dira pobreziaren biktima nagusiak; horrek haien etorkizuna mugatzen du.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Haurrek: muturreko pobreen ia erdia haurrak dira». Haurrak dira pobreziaren biktima nagusiak; horrek haien etorkizuna mugatzen du.</p>
+      <label class="botoia jarraitu" for="s13">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g14" id="z14"><input class="okerra" type="radio" name="g14" id="o14"><input class="ikusita" type="checkbox" id="s14">
+    <div class="karta">
+      <h2>Zer esan nahi du GIH siglak?</h2>
+      <label for="o14"><b>A</b> Gobernu Internazionalaren Helburuak</label>
+      <label for="o14"><b>B</b> Gizarte Ikerketako Hitzarmena</label>
+      <label class="zuz" for="z14"><b>C</b> Garapen Iraunkorreko Helburuak</label>
+      <p class="ondo"><strong>ZUZENA!</strong> GIH = Garapen Iraunkorreko Helburuak (ingelesez SDG).</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Garapen Iraunkorreko Helburuak». GIH = Garapen Iraunkorreko Helburuak (ingelesez SDG).</p>
+      <label class="botoia jarraitu" for="s14">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g15" id="z15"><input class="okerra" type="radio" name="g15" id="o15"><input class="ikusita" type="checkbox" id="s15">
+    <div class="karta">
+      <h2>Zein erakundek bultzatu zuen Agenda 2030?</h2>
+      <label class="zuz" for="z15"><b>A</b> Nazio Batuen Erakundeak (NBE)</label>
+      <label for="o15"><b>B</b> NATOk</label>
+      <label for="o15"><b>C</b> FIFAk</label>
+      <p class="ondo"><strong>ZUZENA!</strong> NBEko Batzar Nagusiak onartu zuen Agenda 2030.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Nazio Batuen Erakundeak (NBE)». NBEko Batzar Nagusiak onartu zuen Agenda 2030.</p>
+      <label class="botoia jarraitu" for="s15">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g16" id="z16"><input class="okerra" type="radio" name="g16" id="o16"><input class="ikusita" type="checkbox" id="s16">
+    <div class="karta">
+      <h2>Zertarako balio dute gizarte-babeseko sistemek (pentsioak, langabezia-sariak...)?</h2>
+      <label for="o16"><b>A</b> Bankuen irabaziak handitzeko</label>
+      <label class="zuz" for="z16"><b>B</b> Pertsona kalteberak babesteko eta pobreziara ez erortzeko</label>
+      <label for="o16"><b>C</b> Enpresei zergak kentzeko</label>
+      <p class="ondo"><strong>ZUZENA!</strong> 1.3 xedea: gizarte-babeseko sistemak guztiontzat, pobreenak barne.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Pertsona kalteberak babesteko eta pobreziara ez erortzeko». 1.3 xedea: gizarte-babeseko sistemak guztiontzat, pobreenak barne.</p>
+      <label class="botoia jarraitu" for="s16">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g17" id="z17"><input class="okerra" type="radio" name="g17" id="o17"><input class="ikusita" type="checkbox" id="s17">
+    <div class="karta">
+      <h2>Zer da haur-lana?</h2>
+      <label for="o17"><b>A</b> Haurrek etxean jostailuak jasotzea</label>
+      <label for="o17"><b>B</b> Eskolako etxeko lanak</label>
+      <label class="zuz" for="z17"><b>C</b> Haurrek eskolara joan beharrean lan egitea, beren garapena kaltetuz</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Haur-lanak pobrezia betikotzen du, haurrei hezkuntza kentzen dielako.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Haurrek eskolara joan beharrean lan egitea, beren garapena kaltetuz». Haur-lanak pobrezia betikotzen du, haurrei hezkuntza kentzen dielako.</p>
+      <label class="botoia jarraitu" for="s17">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g18" id="z18"><input class="okerra" type="radio" name="g18" id="o18"><input class="ikusita" type="checkbox" id="s18">
+    <div class="karta">
+      <h2>Zer eragin izan zuen COVID-19 pandemiak muturreko pobrezian?</h2>
+      <label class="zuz" for="z18"><b>A</b> Hamarkadetan lehen aldiz handitu egin zen</label>
+      <label for="o18"><b>B</b> Erabat desagertu zen</label>
+      <label for="o18"><b>C</b> Ez zuen eraginik izan</label>
+      <p class="ondo"><strong>ZUZENA!</strong> 2020an milioika pertsona itzuli ziren muturreko pobreziara.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Hamarkadetan lehen aldiz handitu egin zen». 2020an milioika pertsona itzuli ziren muturreko pobreziara.</p>
+      <label class="botoia jarraitu" for="s18">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g19" id="z19"><input class="okerra" type="radio" name="g19" id="o19"><input class="ikusita" type="checkbox" id="s19">
+    <div class="karta">
+      <h2>Zer da lan duina?</h2>
+      <label for="o19"><b>A</b> Egunean 16 ordu egiten den lana</label>
+      <label class="zuz" for="z19"><b>B</b> Soldata justua, segurtasuna eta eskubideak dituen lana</label>
+      <label for="o19"><b>C</b> Soldatarik gabeko lana</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Lan duinak pobreziatik ateratzen laguntzen du (8. GIHarekin lotuta).</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Soldata justua, segurtasuna eta eskubideak dituen lana». Lan duinak pobreziatik ateratzen laguntzen du (8. GIHarekin lotuta).</p>
+      <label class="botoia jarraitu" for="s19">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g20" id="z20"><input class="okerra" type="radio" name="g20" id="o20"><input class="ikusita" type="checkbox" id="s20">
+    <div class="karta">
+      <h2>Zer neurtzen du Gini koefizienteak?</h2>
+      <label for="o20"><b>A</b> Herrialdeko biztanle kopurua</label>
+      <label for="o20"><b>B</b> Tenperatura</label>
+      <label class="zuz" for="z20"><b>C</b> Herrialde bateko diru-sarreren desberdintasuna</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Gini: 0 = berdintasun osoa, 1 = desberdintasun osoa.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Herrialde bateko diru-sarreren desberdintasuna». Gini: 0 = berdintasun osoa, 1 = desberdintasun osoa.</p>
+      <label class="botoia jarraitu" for="s20">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g21" id="z21"><input class="okerra" type="radio" name="g21" id="o21"><input class="ikusita" type="checkbox" id="s21">
+    <div class="karta">
+      <h2>Zer neurtzen du pobrezia multidimentsionalak?</h2>
+      <label class="zuz" for="z21"><b>A</b> Dirua ez ezik, osasuna, hezkuntza eta bizi-baldintzak ere</label>
+      <label for="o21"><b>B</b> Herrialde baten diru-sarrera totala bakarrik</label>
+      <label for="o21"><b>C</b> Pertsona batek dituen gauza kopurua</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Pobrezia ez da dirua bakarrik: osasuna, eskola, ura, etxebizitza... ere kontatzen dira.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Dirua ez ezik, osasuna, hezkuntza eta bizi-baldintzak ere». Pobrezia ez da dirua bakarrik: osasuna, eskola, ura, etxebizitza... ere kontatzen dira.</p>
+      <label class="botoia jarraitu" for="s21">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g22" id="z22"><input class="okerra" type="radio" name="g22" id="o22"><input class="ikusita" type="checkbox" id="s22">
+    <div class="karta">
+      <h2>Zer da bidezko merkataritza (comercio justo)?</h2>
+      <label for="o22"><b>A</b> Produktu garestienak bakarrik saltzea</label>
+      <label class="zuz" for="z22"><b>B</b> Ekoizleei prezio duina eta lan-baldintza onak bermatzen dizkien merkataritza</label>
+      <label for="o22"><b>C</b> Dena doan saltzea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Bidezko merkataritzak herrialde pobreetako ekoizleei bizimodu duina ematen laguntzen die.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Ekoizleei prezio duina eta lan-baldintza onak bermatzen dizkien merkataritza». Bidezko merkataritzak herrialde pobreetako ekoizleei bizimodu duina ematen laguntzen die.</p>
+      <label class="botoia jarraitu" for="s22">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g23" id="z23"><input class="okerra" type="radio" name="g23" id="o23"><input class="ikusita" type="checkbox" id="s23">
+    <div class="karta">
+      <h2>Zer da pobrezia energetikoa?</h2>
+      <label for="o23"><b>A</b> Eguzki-plakak izatea</label>
+      <label for="o23"><b>B</b> Argia gehiegi erabiltzea</label>
+      <label class="zuz" for="z23"><b>C</b> Etxea berotzeko edo argia ordaintzeko dirurik ez izatea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Europan ere milioika familiak dute arazo hau negua iristean.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Etxea berotzeko edo argia ordaintzeko dirurik ez izatea». Europan ere milioika familiak dute arazo hau negua iristean.</p>
+      <label class="botoia jarraitu" for="s23">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g24" id="z24"><input class="okerra" type="radio" name="g24" id="o24"><input class="ikusita" type="checkbox" id="s24">
+    <div class="karta">
+      <h2>Zer da pobrezia erlatiboa?</h2>
+      <label class="zuz" for="z24"><b>A</b> Bizi zaren gizartearen bizi-maila arruntaren azpitik egotea</label>
+      <label for="o24"><b>B</b> Ezer ere ez izatea</label>
+      <label for="o24"><b>C</b> Familia handi batean bizitzea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Pobrezia erlatiboa gizarte bakoitzaren batez besteko bizi-mailarekin konparatuta neurtzen da.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Bizi zaren gizartearen bizi-maila arruntaren azpitik egotea». Pobrezia erlatiboa gizarte bakoitzaren batez besteko bizi-mailarekin konparatuta neurtzen da.</p>
+      <label class="botoia jarraitu" for="s24">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g25" id="z25"><input class="okerra" type="radio" name="g25" id="o25"><input class="ikusita" type="checkbox" id="s25">
+    <div class="karta">
+      <h2>Zergatik dago pobrezia gehiago landa-eremuetan?</h2>
+      <label for="o25"><b>A</b> Hirietan pobreziarik ez dagoelako</label>
+      <label class="zuz" for="z25"><b>B</b> Zerbitzu, lan aukera eta azpiegitura gutxiago dagoelako</label>
+      <label for="o25"><b>C</b> Han inork ez duelako lan egiten</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Munduko pobre gehienak landa-eremuetan bizi dira eta nekazaritzatik bizi dira.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Zerbitzu, lan aukera eta azpiegitura gutxiago dagoelako». Munduko pobre gehienak landa-eremuetan bizi dira eta nekazaritzatik bizi dira.</p>
+      <label class="botoia jarraitu" for="s25">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g26" id="z26"><input class="okerra" type="radio" name="g26" id="o26"><input class="ikusita" type="checkbox" id="s26">
+    <div class="karta">
+      <h2>Zer dio 1.2 xedeak 2030erako?</h2>
+      <label for="o26"><b>A</b> Pobrezia %10 murriztea</label>
+      <label for="o26"><b>B</b> Pobrezia neurtzeari uztea</label>
+      <label class="zuz" for="z26"><b>C</b> Pobrezian bizi diren gizon, emakume eta haurren proportzioa gutxienez erdira murriztea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> 1.2 xedea: pobrezia gutxienez erdira murriztea, herrialde bakoitzeko definizioen arabera.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Pobrezian bizi diren gizon, emakume eta haurren proportzioa gutxienez erdira murriztea». 1.2 xedea: pobrezia gutxienez erdira murriztea, herrialde bakoitzeko definizioen arabera.</p>
+      <label class="botoia jarraitu" for="s26">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g27" id="z27"><input class="okerra" type="radio" name="g27" id="o27"><input class="ikusita" type="checkbox" id="s27">
+    <div class="karta">
+      <h2>Zer da mikrokreditu bat?</h2>
+      <label class="zuz" for="z27"><b>A</b> Bankuetara sarbiderik ez duenari mailegu txiki bat ematea negozio bat sortzeko</label>
+      <label for="o27"><b>B</b> Kreditu-txartel oso txiki bat</label>
+      <label for="o27"><b>C</b> Zerga mota bat</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Mikrofinantzek bankuetatik kanpo geratzen direnei negozio txikiak sortzen laguntzen diete.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Bankuetara sarbiderik ez duenari mailegu txiki bat ematea negozio bat sortzeko». Mikrofinantzek bankuetatik kanpo geratzen direnei negozio txikiak sortzen laguntzen diete.</p>
+      <label class="botoia jarraitu" for="s27">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g28" id="z28"><input class="okerra" type="radio" name="g28" id="o28"><input class="ikusita" type="checkbox" id="s28">
+    <div class="karta">
+      <h2>Zer bermatu nahi du 1.4 xedeak?</h2>
+      <label for="o28"><b>A</b> Zerbitzu publikoak pribatizatzea</label>
+      <label class="zuz" for="z28"><b>B</b> Guztiek baliabide ekonomiko eta oinarrizko zerbitzuetarako eskubide berdinak izatea</label>
+      <label for="o28"><b>C</b> Aberatsek lur gehiago izatea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Lurra, herentzia, teknologia eta oinarrizko zerbitzuak ere guztientzat, bereziki emakumeentzat.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Guztiek baliabide ekonomiko eta oinarrizko zerbitzuetarako eskubide berdinak izatea». Lurra, herentzia, teknologia eta oinarrizko zerbitzuak ere guztientzat, bereziki emakumeentzat.</p>
+      <label class="botoia jarraitu" for="s28">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g29" id="z29"><input class="okerra" type="radio" name="g29" id="o29"><input class="ikusita" type="checkbox" id="s29">
+    <div class="karta">
+      <h2>Zein GIHrekin dago lotuta 1. GIHa?</h2>
+      <label for="o29"><b>A</b> Bakar batekin ere ez</label>
+      <label for="o29"><b>B</b> 17.arekin bakarrik</label>
+      <label class="zuz" for="z29"><b>C</b> Ia guztiekin: gosea, osasuna, hezkuntza, berdintasuna...</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Helburu guztiak elkarren artean lotuta daude: pobreziak denak ukitzen ditu.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Ia guztiekin: gosea, osasuna, hezkuntza, berdintasuna...». Helburu guztiak elkarren artean lotuta daude: pobreziak denak ukitzen ditu.</p>
+      <label class="botoia jarraitu" for="s29">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g30" id="z30"><input class="okerra" type="radio" name="g30" id="o30"><input class="ikusita" type="checkbox" id="s30">
+    <div class="karta">
+      <h2>Zein ziren Agenda 2030 aurreko helburuak (2000-2015)?</h2>
+      <label class="zuz" for="z30"><b>A</b> Milurtekoaren Garapen Helburuak</label>
+      <label for="o30"><b>B</b> Kyotoko Protokoloa</label>
+      <label for="o30"><b>C</b> Parisko Akordioa</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Milurtekoaren 8 Garapen Helburuen ondorengoa da Agenda 2030.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Milurtekoaren Garapen Helburuak». Milurtekoaren 8 Garapen Helburuen ondorengoa da Agenda 2030.</p>
+      <label class="botoia jarraitu" for="s30">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g31" id="z31"><input class="okerra" type="radio" name="g31" id="o31"><input class="ikusita" type="checkbox" id="s31">
+    <div class="karta">
+      <h2>Zer da oinarrizko errenta unibertsala?</h2>
+      <label for="o31"><b>A</b> Aberatsentzako laguntza bat</label>
+      <label class="zuz" for="z31"><b>B</b> Herritar guztiei baldintzarik gabe diru kopuru bat ematea proposatzen duen ideia</label>
+      <label for="o31"><b>C</b> Zerga berri bat</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Pobreziaren aurkako proposamen eztabaidatua da; herrialde batzuk probatzen ari dira.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Herritar guztiei baldintzarik gabe diru kopuru bat ematea proposatzen duen ideia». Pobreziaren aurkako proposamen eztabaidatua da; herrialde batzuk probatzen ari dira.</p>
+      <label class="botoia jarraitu" for="s31">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g32" id="z32"><input class="okerra" type="radio" name="g32" id="o32"><input class="ikusita" type="checkbox" id="s32">
+    <div class="karta">
+      <h2>Noiz da Pobrezia Desagerrarazteko Nazioarteko Eguna?</h2>
+      <label for="o32"><b>A</b> Martxoaren 8an</label>
+      <label for="o32"><b>B</b> Ekainaren 5ean</label>
+      <label class="zuz" for="z32"><b>C</b> Urriaren 17an</label>
+      <p class="ondo"><strong>ZUZENA!</strong> NBEk urriaren 17a aukeratu zuen pobreziaren aurkako borroka gogorarazteko.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Urriaren 17an». NBEk urriaren 17a aukeratu zuen pobreziaren aurkako borroka gogorarazteko.</p>
+      <label class="botoia jarraitu" for="s32">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g33" id="z33"><input class="okerra" type="radio" name="g33" id="o33"><input class="ikusita" type="checkbox" id="s33">
+    <div class="karta">
+      <h2>Zergatik da ur edangarria garrantzitsua pobrezia murrizteko?</h2>
+      <label class="zuz" for="z33"><b>A</b> Gaixotasunak saihesten ditu eta ura bilatzen denbora galtzea ekiditen du</label>
+      <label for="o33"><b>B</b> Ura saltzeko</label>
+      <label for="o33"><b>C</b> Ez dago loturarik</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Askok (batez ere neskek) orduak ematen dituzte ura bila, eskolara joan beharrean.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Gaixotasunak saihesten ditu eta ura bilatzen denbora galtzea ekiditen du». Askok (batez ere neskek) orduak ematen dituzte ura bila, eskolara joan beharrean.</p>
+      <label class="botoia jarraitu" for="s33">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g34" id="z34"><input class="okerra" type="radio" name="g34" id="o34"><input class="ikusita" type="checkbox" id="s34">
+    <div class="karta">
+      <h2>Munduko Bankuaren arabera, noiz dago pertsona bat muturreko pobrezian?</h2>
+      <label for="o34"><b>A</b> Autorik ez duenean</label>
+      <label class="zuz" for="z34"><b>B</b> Egunean 3 dolar inguru baino gutxiagorekin bizi denean</label>
+      <label for="o34"><b>C</b> Egunean 30 dolar baino gutxiagorekin bizi denean</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Nazioarteko pobrezia-muga egunean 3 $ ingurukoa da (lehen 2,15 $).</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Egunean 3 dolar inguru baino gutxiagorekin bizi denean». Nazioarteko pobrezia-muga egunean 3 $ ingurukoa da (lehen 2,15 $).</p>
+      <label class="botoia jarraitu" for="s34">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g35" id="z35"><input class="okerra" type="radio" name="g35" id="o35"><input class="ikusita" type="checkbox" id="s35">
+    <div class="karta">
+      <h2>Zer da gizarte-bazterketa?</h2>
+      <label for="o35"><b>A</b> Lagun asko izatea</label>
+      <label for="o35"><b>B</b> Herri txiki batean bizitzea</label>
+      <label class="zuz" for="z35"><b>C</b> Gizartean parte hartzeko aukerarik ez izatea (lana, hezkuntza, harremanak)</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Pobreziak eta bazterketak elkar elikatzen dute.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Gizartean parte hartzeko aukerarik ez izatea (lana, hezkuntza, harremanak)». Pobreziak eta bazterketak elkar elikatzen dute.</p>
+      <label class="botoia jarraitu" for="s35">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g36" id="z36"><input class="okerra" type="radio" name="g36" id="o36"><input class="ikusita" type="checkbox" id="s36">
+    <div class="karta">
+      <h2>Zein eskualdetan bizi da muturreko pobrezian dagoen jende gehiena?</h2>
+      <label class="zuz" for="z36"><b>A</b> Saharaz hegoaldeko Afrikan</label>
+      <label for="o36"><b>B</b> Europan</label>
+      <label for="o36"><b>C</b> Ipar Amerikan</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Muturreko pobrezian dauden pertsonen gehiengoa Saharaz hegoaldeko Afrikan bizi da.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Saharaz hegoaldeko Afrikan». Muturreko pobrezian dauden pertsonen gehiengoa Saharaz hegoaldeko Afrikan bizi da.</p>
+      <label class="botoia jarraitu" for="s36">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g37" id="z37"><input class="okerra" type="radio" name="g37" id="o37"><input class="ikusita" type="checkbox" id="s37">
+    <div class="karta">
+      <h2>Zer dio 1.1 xedeak?</h2>
+      <label for="o37"><b>A</b> Pobrezia %5 murriztea</label>
+      <label class="zuz" for="z37"><b>B</b> 2030erako muturreko pobrezia desagerraraztea mundu osoan</label>
+      <label for="o37"><b>C</b> Pobrezia Europan bakarrik murriztea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> 1.1 xedea: muturreko pobrezia (egunean 3 $ inguru baino gutxiago) erabat desagerraraztea.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «2030erako muturreko pobrezia desagerraraztea mundu osoan». 1.1 xedea: muturreko pobrezia (egunean 3 $ inguru baino gutxiago) erabat desagerraraztea.</p>
+      <label class="botoia jarraitu" for="s37">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g38" id="z38"><input class="okerra" type="radio" name="g38" id="o38"><input class="ikusita" type="checkbox" id="s38">
+    <div class="karta">
+      <h2>Zer da finantza-inklusioa?</h2>
+      <label for="o38"><b>A</b> Bankuak ixtea</label>
+      <label for="o38"><b>B</b> Dirua ezkutatzea</label>
+      <label class="zuz" for="z38"><b>C</b> Denek banku-kontu bat eta finantza-zerbitzuak erabiltzeko aukera izatea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Finantza-zerbitzuek aurrezten, inbertitzen eta krisiei aurre egiten laguntzen dute.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Denek banku-kontu bat eta finantza-zerbitzuak erabiltzeko aukera izatea». Finantza-zerbitzuek aurrezten, inbertitzen eta krisiei aurre egiten laguntzen dute.</p>
+      <label class="botoia jarraitu" for="s38">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g39" id="z39"><input class="okerra" type="radio" name="g39" id="o39"><input class="ikusita" type="checkbox" id="s39">
+    <div class="karta">
+      <h2>Nola eragiten dio klima-aldaketak pobreziari?</h2>
+      <label class="zuz" for="z39"><b>A</b> Lehorteek eta uholdeek pertsona pobreenak kaltetzen dituzte gehien</label>
+      <label for="o39"><b>B</b> Ez du inolako eraginik</label>
+      <label for="o39"><b>C</b> Pertsona aberatsak bakarrik kaltetzen ditu</label>
+      <p class="ondo"><strong>ZUZENA!</strong> 1.5 xedea: pobreen erresilientzia indartzea hondamendien eta klima-muturren aurrean.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Lehorteek eta uholdeek pertsona pobreenak kaltetzen dituzte gehien». 1.5 xedea: pobreen erresilientzia indartzea hondamendien eta klima-muturren aurrean.</p>
+      <label class="botoia jarraitu" for="s39">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g40" id="z40"><input class="okerra" type="radio" name="g40" id="o40"><input class="ikusita" type="checkbox" id="s40">
+    <div class="karta">
+      <h2>Zer da elikadura-segurtasunik eza?</h2>
+      <label for="o40"><b>A</b> Jatetxe batean jatea</label>
+      <label class="zuz" for="z40"><b>B</b> Janari nahikoa eta osasungarria lortzeko aukera seguru ez izatea</label>
+      <label for="o40"><b>C</b> Gehiegi jatea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Pobrezia eta gosea (2. GIHa) estuki lotuta daude.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Janari nahikoa eta osasungarria lortzeko aukera seguru ez izatea». Pobrezia eta gosea (2. GIHa) estuki lotuta daude.</p>
+      <label class="botoia jarraitu" for="s40">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g41" id="z41"><input class="okerra" type="radio" name="g41" id="o41"><input class="ikusita" type="checkbox" id="s41">
+    <div class="karta">
+      <h2>Zer da etxegabetasuna?</h2>
+      <label for="o41"><b>A</b> Bi etxe izatea</label>
+      <label for="o41"><b>B</b> Oporretan hotel batean egotea</label>
+      <label class="zuz" for="z41"><b>C</b> Bizitzeko etxebizitza egonkor eta duinik ez izatea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Etxebizitza duina oinarrizko zerbitzuetako bat da 1.4 xedearen arabera.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Bizitzeko etxebizitza egonkor eta duinik ez izatea». Etxebizitza duina oinarrizko zerbitzuetako bat da 1.4 xedearen arabera.</p>
+      <label class="botoia jarraitu" for="s41">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g42" id="z42"><input class="okerra" type="radio" name="g42" id="o42"><input class="ikusita" type="checkbox" id="s42">
+    <div class="karta">
+      <h2>Zer da Garapenerako Laguntza Ofiziala?</h2>
+      <label class="zuz" for="z42"><b>A</b> Herrialde aberatsek pobreagoei ematen dieten diru-laguntza publikoa</label>
+      <label for="o42"><b>B</b> Bankuek ematen duten mailegu pribatua</label>
+      <label for="o42"><b>C</b> Turisten gastua</label>
+      <p class="ondo"><strong>ZUZENA!</strong> 1.a xedeak garapenerako baliabideak mobilizatzea eskatzen du.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Herrialde aberatsek pobreagoei ematen dieten diru-laguntza publikoa». 1.a xedeak garapenerako baliabideak mobilizatzea eskatzen du.</p>
+      <label class="botoia jarraitu" for="s42">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g43" id="z43"><input class="okerra" type="radio" name="g43" id="o43"><input class="ikusita" type="checkbox" id="s43">
+    <div class="karta">
+      <h2>Nola eragiten dute gerrek pobrezian?</h2>
+      <label for="o43"><b>A</b> Ez dute eraginik</label>
+      <label class="zuz" for="z43"><b>B</b> Etxeak, lanak eta zerbitzuak suntsitzen dituzte eta pobrezia areagotzen dute</label>
+      <label for="o43"><b>C</b> Herrialdeak aberasten dituzte</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Gatazkak dauden herrialdeetan pobrezia askoz azkarrago hazten da (16. GIHa).</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Etxeak, lanak eta zerbitzuak suntsitzen dituzte eta pobrezia areagotzen dute». Gatazkak dauden herrialdeetan pobrezia askoz azkarrago hazten da (16. GIHa).</p>
+      <label class="botoia jarraitu" for="s43">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g44" id="z44"><input class="okerra" type="radio" name="g44" id="o44"><input class="ikusita" type="checkbox" id="s44">
+    <div class="karta">
+      <h2>NBEren arabera, BPGaren zein portzentaje eman beharko lukete herrialde aberatsek garapenerako laguntzan?</h2>
+      <label for="o44"><b>A</b> %10</label>
+      <label for="o44"><b>B</b> %50</label>
+      <label class="zuz" for="z44"><b>C</b> %0,7</label>
+      <p class="ondo"><strong>ZUZENA!</strong> %0,7aren helburua aspaldikoa da, baina herrialde gutxik betetzen dute.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «%0,7». %0,7aren helburua aspaldikoa da, baina herrialde gutxik betetzen dute.</p>
+      <label class="botoia jarraitu" for="s44">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g45" id="z45"><input class="okerra" type="radio" name="g45" id="o45"><input class="ikusita" type="checkbox" id="s45">
+    <div class="karta">
+      <h2>Zein da Agenda 2030eko 1. Garapen Iraunkorreko Helburua (GIH)?</h2>
+      <label class="zuz" for="z45"><b>A</b> Pobrezia desagerraraztea, bere forma guztietan eta leku guztietan</label>
+      <label for="o45"><b>B</b> Gosea desagerraraztea</label>
+      <label for="o45"><b>C</b> Ur garbia eta saneamendua bermatzea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> 1. GIHa &quot;Pobreziarik ez&quot; da: pobrezia mundu osotik desagerraraztea.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Pobrezia desagerraraztea, bere forma guztietan eta leku guztietan». 1. GIHa &quot;Pobreziarik ez&quot; da: pobrezia mundu osotik desagerraraztea.</p>
+      <label class="botoia jarraitu" for="s45">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g46" id="z46"><input class="okerra" type="radio" name="g46" id="o46"><input class="ikusita" type="checkbox" id="s46">
+    <div class="karta">
+      <h2>Zer da ekonomia informala?</h2>
+      <label for="o46"><b>A</b> Gobernuaren lana</label>
+      <label class="zuz" for="z46"><b>B</b> Kontraturik eta gizarte-babesik gabeko lana</label>
+      <label for="o46"><b>C</b> Bankuetan egiten den lana</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Ekonomia informaleko langileek ez dute babesik gaixotu edo lana galtzen badute.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Kontraturik eta gizarte-babesik gabeko lana». Ekonomia informaleko langileek ez dute babesik gaixotu edo lana galtzen badute.</p>
+      <label class="botoia jarraitu" for="s46">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g47" id="z47"><input class="okerra" type="radio" name="g47" id="o47"><input class="ikusita" type="checkbox" id="s47">
+    <div class="karta">
+      <h2>Zer da &quot;langile pobre&quot; bat?</h2>
+      <label for="o47"><b>A</b> Lanik ez duen pertsona</label>
+      <label for="o47"><b>B</b> Lan gutxi egiten duen pertsona</label>
+      <label class="zuz" for="z47"><b>C</b> Lana izan arren pobrezia-mugatik behera bizi den pertsona</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Lana izateak ez du beti pobreziatik ateratzen, soldata txikiegia bada.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Lana izan arren pobrezia-mugatik behera bizi den pertsona». Lana izateak ez du beti pobreziatik ateratzen, soldata txikiegia bada.</p>
+      <label class="botoia jarraitu" for="s47">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g48" id="z48"><input class="okerra" type="radio" name="g48" id="o48"><input class="ikusita" type="checkbox" id="s48">
+    <div class="karta">
+      <h2>Zer da Diru-sarrerak Bermatzeko Errenta (DBE) Euskadin?</h2>
+      <label class="zuz" for="z48"><b>A</b> Diru-sarrera nahikorik ez dutenentzako laguntza ekonomikoa</label>
+      <label for="o48"><b>B</b> Enpresentzako zerga bat</label>
+      <label for="o48"><b>C</b> Unibertsitateko beka bat</label>
+      <p class="ondo"><strong>ZUZENA!</strong> DBEa Euskadiko gizarte-babeseko tresna bat da, pobrezia larria saihesteko.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Diru-sarrera nahikorik ez dutenentzako laguntza ekonomikoa». DBEa Euskadiko gizarte-babeseko tresna bat da, pobrezia larria saihesteko.</p>
+      <label class="botoia jarraitu" for="s48">JARRAITU ►</label>
+    </div>
+    <input class="zuzena" type="radio" name="g49" id="z49"><input class="okerra" type="radio" name="g49" id="o49"><input class="ikusita" type="checkbox" id="s49">
+    <div class="karta">
+      <h2>Zer da pobrezia absolutua?</h2>
+      <label for="o49"><b>A</b> Oporretan ezin joatea</label>
+      <label class="zuz" for="z49"><b>B</b> Oinarrizko beharrak (janaria, ura, etxebizitza) ezin asetzea</label>
+      <label for="o49"><b>C</b> Auto txiki bat izatea</label>
+      <p class="ondo"><strong>ZUZENA!</strong> Pobrezia absolutuan bizirauteko oinarrizko beharrak ere ez dira betetzen.</p>
+      <p class="gaizki"><strong>OKERRA!</strong> Erantzun zuzena: «Oinarrizko beharrak (janaria, ura, etxebizitza) ezin asetzea». Pobrezia absolutuan bizirauteko oinarrizko beharrak ere ez dira betetzen.</p>
+      <label class="botoia jarraitu" for="s49">JARRAITU ►</label>
+    </div>
+    </div>
+    <p class="galdera-zenbakia"></p>
+  </div>
+
+  <div class="amaiera-kutxa irabazi">
+    <h2>DOLAR GAIZTOA GARAITUTA!</h2>
+    <a class="botoia" href="/Orriak/Jefe3/Final.html#irabazi">JARRAITU</a>
+  </div>
+
+  <div class="amaiera-kutxa galdu">
+    <h2>BIZITZARIK GABE GERATU ZARA</h2>
+    <a class="botoia" href="/Orriak/Jefe3/Final.html#galdu">JARRAITU</a>
+    <button class="botoia" type="reset">BERRIRO</button>
+  </div>
+
+  <div class="flash-gorria"></div>
+</form>
+</body>
+</html>
