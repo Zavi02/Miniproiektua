@@ -21,22 +21,15 @@
       height: 32%;
       border-radius: 50%;
       cursor: pointer;
-      transition: box-shadow .25s, transform .25s;
-      --glow: 255, 255, 255;
-    }
-    .hotspot:hover,
-    .hotspot:focus-visible {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px 10px rgba(var(--glow), .65);
       outline: none;
     }
 
-    /* Posición horizontal + color de brillo de cada círculo */
-    .n1 { left: 1.0%;  --glow: 0, 229, 255; }
-    .n2 { left: 20.8%; --glow: 255, 170, 0; }
-    .n3 { left: 40.7%; --glow: 255, 40, 70; }
-    .n4 { left: 60.6%; --glow: 255, 205, 0; }
-    .n5 { left: 80.3%; --glow: 40, 200, 80; }
+    /* Posición horizontal de cada círculo */
+    .n1 { left: 1.0%; }
+    .n2 { left: 20.8%; }
+    .n3 { left: 40.7%; }
+    .n4 { left: 60.6%; }
+    .n5 { left: 80.3%; }
 
     /* Tooltip con el nombre */
     .hotspot::after {
@@ -53,7 +46,6 @@
       white-space: nowrap;
       opacity: 0;
       pointer-events: none;
-      transition: opacity .2s;
     }
     .hotspot:hover::after,
     .hotspot:focus-visible::after { opacity: 1; }
