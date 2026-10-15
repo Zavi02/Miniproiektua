@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Itsaspeko Burua - Emaitza</title>
+  <link rel="stylesheet" href="/Css/Jefes/Jefe2/victoria.css">
+
+  <!-- ESTO DECIDE QUE PANTALLA SE VE: gana o pierde -->
+  <style>
+    #pierde {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: white;
+      background: #021 url("/Assets/Img/Jefes/Jefe2/fondo_animado.gif") center / cover;
+    }
+    #pierde:target {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- IRABAZI: se ve cuando la direccion acaba en #gana -->
+  <div id="gana">
+    <h1>🎉 Irabazi duzu!</h1>
+    <p>Buruak ez du gehiago kutsatuko. Itsasoko bizitza salbatu duzu!</p>
+    <img src="img/death.gi" width="400"><br>
+    <a href="combate.html">Berriro jolastu</a>
+    <a href="niveles.html">Hasierara</a>
+  </div>
+
+  <!-- GALDU: se ve cuando la direccion acaba en #pierde -->
+  <div id="pierde">
+    <h1>💀 Galdu duzu</h1>
+    <p>Buruak irabazi du. Saiatu berriro!</p>
+    <img src="img/attack.gi" width="400"><br>
+    <a href="combate.html">Berriro jolastu</a>
+    <a href="/Niveles.html">Hasierara</a>
+  </div>
+
+</body>
+</html>
