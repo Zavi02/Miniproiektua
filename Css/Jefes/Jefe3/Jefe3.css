@@ -1,10 +1,3 @@
-/* =========================================================
-   JEFE 3 - DOLAR GAIZTOA (1. GIHa: Pobreziarik ez)
-   HTML + CSS bakarrik, JS gabe.
-   Jokoaren egoera Combate.html-eko input ezkutuetan dago eta
-   CSSak :has() eta :nth-child(n of :checked) erabiliz irakurtzen du.
-   ========================================================= */
-
 :root {
   --berdea: #b8d99a;
   --berde-iluna: #1f3a1c;
@@ -34,7 +27,6 @@ body {
   overflow: hidden;
 }
 
-/* Iluntze arina eszenatokiaren gainean, testua ondo irakurtzeko */
 body::before {
   content: "";
   position: fixed;
@@ -43,7 +35,6 @@ body::before {
   pointer-events: none;
 }
 
-/* ---------- BOTOIAK ---------- */
 .botoia {
   display: inline-block;
   font-family: var(--pixel);
@@ -67,10 +58,6 @@ body::before {
   box-shadow: inset -4px -4px 0 #c7951e, 0 2px 0 #0b140a;
 }
 
-/* =========================================================
-   BORROKA (Combate.html)
-   ========================================================= */
-
 .jokoa {
   position: fixed;
   inset: 0;
@@ -81,7 +68,6 @@ body::before {
   counter-reset: zenbakia 1;
 }
 
-/* Egoera gordetzen duten input-ak ez dira ikusten (baina label-ekin markatzen dira) */
 .jokoa input {
   position: fixed;
   top: 0;
@@ -92,7 +78,6 @@ body::before {
   visibility: hidden;
 }
 
-/* Galdera-zenbakia: JARRAITU sakatutako galderak zenbatzen ditu */
 .ikusita:checked {
   counter-increment: zenbakia;
 }
@@ -101,7 +86,6 @@ body::before {
   content: counter(zenbakia) ". GALDERA";
 }
 
-/* ---------- HUD: bizitzak (bihotz emojiak) ---------- */
 .hud {
   display: flex;
   justify-content: space-between;
@@ -141,13 +125,11 @@ body::before {
   content: var(--bihotza, "💚");
 }
 
-/* Bossaren bihotzak: zenbat erantzun zuzen, hainbat bihotz beltz (eskuinetik) */
 body:has(.kartak > :nth-child(1 of .zuzena:checked)) .burua i:nth-of-type(5),
 body:has(.kartak > :nth-child(2 of .zuzena:checked)) .burua i:nth-of-type(4),
 body:has(.kartak > :nth-child(3 of .zuzena:checked)) .burua i:nth-of-type(3),
 body:has(.kartak > :nth-child(4 of .zuzena:checked)) .burua i:nth-of-type(2),
 body:has(.kartak > :nth-child(5 of .zuzena:checked)) .burua i:nth-of-type(1),
-/* Jokalariaren bihotzak: zenbat erantzun oker, hainbat bihotz beltz */
 body:has(.kartak > :nth-child(1 of .okerra:checked)) .jokalaria i:nth-of-type(3),
 body:has(.kartak > :nth-child(2 of .okerra:checked)) .jokalaria i:nth-of-type(2),
 body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1) {
@@ -155,7 +137,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1)
   filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff);
 }
 
-/* ---------- ESZENA: bossa ---------- */
 .eszena {
   position: relative;
   flex: 1;
@@ -178,7 +159,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1)
   animation: arnasa 1.6s ease-in-out infinite;
 }
 
-/* Arnasa (idle) */
 @keyframes arnasa {
   0%, 100% { transform: translateY(0) rotate(0); }
   25%      { transform: translateY(-8px) rotate(-1.5deg); }
@@ -186,7 +166,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1)
   75%      { transform: translateY(-8px) rotate(1.5deg); }
 }
 
-/* Itzala lurrean */
 .itzala {
   position: absolute;
   bottom: -6px;
@@ -204,7 +183,6 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1)
   50%      { transform: scaleX(0.8); opacity: 0.6; }
 }
 
-/* Aura berdea atzean */
 .aura {
   position: absolute;
   bottom: 0;
@@ -221,20 +199,10 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)) .jokalaria i:nth-of-type(1)
   50%      { opacity: 1;   transform: translateX(-50%) scale(1.05); }
 }
 
-/* Bossaren esaldiak ezkutatuta, dagokien egoeran agertu arte */
 .bunbuiloa {
   display: none;
 }
 
-/* =========================================================
-   EGOERAK
-   - Asmatu berria:  .zuzena:checked + .okerra + .ikusita:not(:checked)
-   - Huts berria:    .okerra:checked + .ikusita:not(:checked)
-   - Irabazi:        5 zuzen eta JARRAITU sakatuta
-   - Galdu:          3 oker eta JARRAITU sakatuta
-   ========================================================= */
-
-/* --- Hasiera: bidea aukeratu arte --- */
 .hasiera {
   display: block;
 }
@@ -249,13 +217,11 @@ body:has(.bidea:checked):not(:has(.ikusita:checked, .zuzena:checked, .okerra:che
   display: block;
 }
 
-/* --- Asmatu edo huts egin berria: bossaren esaldia --- */
 body:has(.zuzena:checked + .okerra + .ikusita:not(:checked)) .b-ondo,
 body:has(.okerra:checked + .ikusita:not(:checked)) .b-gaizki {
   display: block;
 }
 
-/* --- Irabazi eta galdu --- */
 .irabazi,
 .galdu {
   display: none;
@@ -271,13 +237,11 @@ body:has(.kartak > :nth-child(3 of .okerra:checked)):not(:has(.okerra:checked + 
   display: none;
 }
 
-/* Irabazita: bossa grisa eta gardena geratzen da */
 body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + .okerra + .ikusita:not(:checked))) .dolarra {
   filter: grayscale(1);
   opacity: 0.4;
 }
 
-/* ---------- BUNBUILOA (bossak hitz egiten du) ---------- */
 .bunbuiloa {
   position: absolute;
   z-index: 6;
@@ -308,7 +272,6 @@ body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + 
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* ---------- GALDERA KUTXA ---------- */
 .galdera-kutxa,
 .amaiera-kutxa {
   position: relative;
@@ -326,7 +289,6 @@ body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + 
   flex-direction: column;
 }
 
-/* Zenbakia DOMean kartak ondoren dago (kontagailuak ondo zenbatzeko), baina goian erakusten da */
 .galdera-zenbakia {
   order: -1;
   margin: 0 0 6px;
@@ -335,7 +297,6 @@ body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + 
   color: var(--urrea);
 }
 
-/* Kartak: lehen ikusi gabeko galdera bakarrik ikusten da (lehen errenkada) */
 .kartak {
   display: grid;
   grid-template-rows: auto;
@@ -354,7 +315,6 @@ body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + 
   display: none;
 }
 
-/* Bide bakoitzak beste galdera batetik hasten da (ausazko BORROKATU botoia) */
 body:has(#b1:checked) .karta:nth-of-type(n+6),
 body:has(#b2:checked) .karta:nth-of-type(n+11),
 body:has(#b3:checked) .karta:nth-of-type(n+16),
@@ -422,7 +382,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   50% { opacity: 0; }
 }
 
-/* Erantzun ondoren: azalpena eta JARRAITU (animazioa bukatzean) */
 .karta .ondo,
 .karta .gaizki,
 .karta .jarraitu {
@@ -440,7 +399,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   justify-self: end;
 }
 
-/* Erantzundakoan ezin da berriro aukeratu; zuzena berdez */
 .zuzena:checked + .okerra + .ikusita + .karta label:not(.botoia),
 .okerra:checked + .ikusita + .karta label:not(.botoia) {
   pointer-events: none;
@@ -484,7 +442,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   box-shadow: 0 0 0 2px #ff8a80;
 }
 
-/* ---------- HASIERA eta AMAIERA kutxak ---------- */
 .amaiera-kutxa {
   text-align: center;
 }
@@ -505,8 +462,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   margin: 0 6px;
 }
 
-/* Botoi guztiak leku berean daude eta oso azkar txandakatzen dira:
-   klik egiten duzun momentuan goian dagoena da aukeratutako bidea (ausaz). */
 .ausazko-botoiak {
   position: relative;
   width: 280px;
@@ -527,10 +482,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
   10%  { z-index: 1; }
   100% { z-index: 1; }
 }
-
-/* =========================================================
-   SARRERA eta AMAIERA orriak (Introduccion.html / Final.html)
-   ========================================================= */
 
 .orria {
   position: relative;
@@ -608,7 +559,6 @@ body.orri-gorputza {
   animation: arnasa 1.6s ease-in-out infinite;
 }
 
-/* Sarrera: bossa eskuinetik sartzen da */
 .sarrera .irudia img {
   animation: boss-sartu 1s steps(8) both, arnasa 1.6s 1s ease-in-out infinite;
 }
@@ -618,7 +568,6 @@ body.orri-gorputza {
   to   { transform: none; opacity: 1; }
 }
 
-/* Final: irabazi / galdu (:target bidez) */
 .emaitza {
   display: none;
 }
@@ -628,7 +577,6 @@ body:not(:has(.emaitza:target)) #irabazi {
   display: flex;
 }
 
-/* Bossa zimurtuta eta grisa (irabazi duzu) */
 .panela .irudia .zimurtua {
   animation: zimurtua 3s ease-in-out infinite;
 }
@@ -646,7 +594,6 @@ body:not(:has(.emaitza:target)) #irabazi {
   box-shadow: 0 0 0 4px var(--gorria), 0 0 0 8px #000;
 }
 
-/* ---------- MUGIKORRA ---------- */
 @media (max-width: 700px) {
   body {
     font-size: 19px;
