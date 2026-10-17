@@ -34,8 +34,8 @@ section:target {
 .boss {
   position: absolute;
   right: 60px;
-  bottom: 60px;
-  width: 800px;
+  bottom: -40px;
+  width: 600px;
   image-rendering: pixelated;
 }
 

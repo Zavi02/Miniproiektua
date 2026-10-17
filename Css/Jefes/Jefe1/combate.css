@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: url("img/fondo.gif") center / cover;
+  background: url("/Assets/Img/Jefes/Jefe1/fondo.gif") center / cover;
   font-family: Arial, sans-serif;
   color: white;
 }
@@ -13,7 +13,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("img/fondo.gif") center / cover;
+  background: url("/Assets/Img/Jefes/Jefe1/fondo.gif") center / cover;
 }
 
 /* La primera pantalla se ve siempre al abrir la pagina */
@@ -53,12 +53,12 @@ section:target {
 a {
   display: block;
   background: teal;
-  color: white;
+  color: rgb(139, 28, 0);
   padding: 10px;
   margin: 8px 0;
   text-decoration: none;
 }
 
 a:hover {
-  background: darkcyan;
+  background: rgb(139, 28, 0);
 }

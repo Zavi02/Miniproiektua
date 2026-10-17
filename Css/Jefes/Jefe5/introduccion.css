@@ -1,0 +1,157 @@
+
+.hasierako-pantaila {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(2, 12, 25, 0.78),
+            rgba(0, 35, 50, 0.55),
+            rgba(2, 10, 22, 0.90)
+        ),
+        url("eszenatokia_euria.gif") center / cover no-repeat;
+
+    overflow-y: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+
+.hasierako-edukia {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    padding: 42px 35px;
+
+    background: rgba(5, 18, 34, 0.90);
+    border: 2px solid #00cfff;
+    border-radius: 24px;
+
+    box-shadow:
+        0 0 15px #00cfff88,
+        0 0 45px #00cfff33,
+        inset 0 0 25px #00cfff0d;
+
+
+}
+
+
+.hasierako-pantaila h1 {
+    margin: 0 0 18px;
+    color: #8be9ff;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+
+
+    text-shadow:
+        0 0 10px #00cfff,
+        0 0 25px #00cfff88;
+}
+
+/* Testuak */
+.hasierako-pantaila p {
+    color: #e4f6ff;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+/* Azpititulua */
+.hasierako-edukia > p:first-of-type {
+    color: #5fe38f;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Helburuaren panela */
+.hasierako-pantaila .helburua {
+    margin: 28px 0;
+    padding: 22px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(0, 207, 255, 0.10),
+        rgba(95, 227, 143, 0.08)
+    );
+
+    border: 1px solid #5fe38f88;
+    border-left: 5px solid #5fe38f;
+    border-radius: 14px;
+
+    box-shadow: 0 0 20px #5fe38f12;
+}
+
+.hasierako-pantaila .helburua h2 {
+    margin-top: 0;
+    color: #5fe38f;
+    font-size: 1.6rem;
+    text-shadow: 0 0 12px #5fe38f55;
+}
+
+.hasierako-edukia > p:last-of-type {
+    color: #8be9ff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.botoia-hasi {
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+    padding: 17px 36px;
+
+    color: #061525;
+    background: linear-gradient(135deg, #5fe38f, #00cfff);
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+
+
+}
+
+.botoia-hasi:hover {
+    transform: translateY(-4px) scale(1.04);
+    filter: brightness(1.15);
+
+    box-shadow:
+        0 0 20px #00cfff,
+        0 0 45px #5fe38f88;
+}
+
+
+
+
+
+    .hasierako-edukia {
+        padding: 28px 18px;
+        border-radius: 18px;
+    }
+
+    .hasierako-pantaila p {
+        font-size: 0.98rem;
+    }
+
+    .hasierako-pantaila .helburua {
+        padding: 16px;
+        margin: 20px 0;
+    }
+
+    .botoia-hasi {
+        width: 100%;
+        padding: 16px 12px;
+    }

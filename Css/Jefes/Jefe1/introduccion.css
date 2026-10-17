@@ -1,7 +1,7 @@
+
 body {
   margin: 0;
-  min-height: 100vh;
-  background: #021 url("img/fondo.gif") center / cover;
+  background: url("/Assets/Img/Jefes/Jefe1/") center / cover;
   font-family: Arial, sans-serif;
   color: white;
   text-align: center;
@@ -15,7 +15,7 @@ img {
   image-rendering: pixelated;
 }
 
-/* Los botones */
+/* botoiak */
 a {
   display: inline-block;
   background: teal;
@@ -28,4 +28,13 @@ a {
 
 a:hover {
   background: darkcyan;
+}
+
+/* Caja con el texto de la historia */
+.historia {
+  width: 600px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.7);
+  border: 3px solid aqua;
+  padding: 20px;
 }
