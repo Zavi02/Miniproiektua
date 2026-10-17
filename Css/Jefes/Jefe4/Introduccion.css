@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  background: url("/Assets/Img/Fondos/Eszenatokia.png") center / cover;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  color: gold;
+  text-shadow: 0 0 15px orange;
+}
+
+/* botoiak */
+a {
+  display: inline-block;
+  background: darkorange;
+  color: white;
+  padding: 12px 24px;
+  margin: 8px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:hover {
+  background: gold;
+  color: black;
+}
+
+/* Caja con el texto de la historia */
+.historia {
+  width: 600px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.7);
+  border: 3px solid gold;
+  padding: 20px;
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eguzki Golema - Borroka</title>
+  <link rel="stylesheet" href="/Css/Jefes/Jefe4/Combate.css">
+</head>
+<body>
+
+  <!-- Cada <section> es una pantalla del combate.
+       c = aciertos (golpes al jefe), w = fallos (vidas perdidas).
+       Acertar -> pasa a la siguiente pantalla. Fallar -> pierdes una vida. -->
+
+  <!-- Pantalla: 0 aciertos, 0 fallos -->
+  <section id="c0w0">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️❤️ &nbsp;&nbsp; 🤖 🔋🔋🔋🔋🔋</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zein da energia garbi baten adibide bat?</h2>
+      <a href="#c0w1">Ikatza</a>
+      <a href="#c0w1">Petrolioa</a>
+      <a href="#c1w0">Eguzki-energia</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 0 aciertos, 1 fallos -->
+  <section id="c0w1">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️🖤 &nbsp;&nbsp; 🤖 🔋🔋🔋🔋🔋</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer egiten dute eguzki-panelek?</h2>
+      <a href="#c1w1">Eguzki-argia elektrizitate bihurtzen dute</a>
+      <a href="#c0w2">Ura gazitzen dute</a>
+      <a href="#c0w2">Petrolioa ekoizten dute</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 0 aciertos, 2 fallos -->
+  <section id="c0w2">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️🖤🖤 &nbsp;&nbsp; 🤖 🔋🔋🔋🔋🔋</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer da Agenda 2030?</h2>
+      <a href="Final.html#pierde">Futbol txapelketa bat</a>
+      <a href="#c1w2">Nazio Batuen 17 helburuko plana, mundua jasangarriagoa izateko</a>
+      <a href="Final.html#pierde">Zentral nuklear baten izena</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 1 aciertos, 0 fallos -->
+  <section id="c1w0">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️❤️ &nbsp;&nbsp; 🤖 🔋🔋🔋🔋🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer egiten dute eguzki-panelek?</h2>
+      <a href="#c2w0">Eguzki-argia elektrizitate bihurtzen dute</a>
+      <a href="#c1w1">Ura gazitzen dute</a>
+      <a href="#c1w1">Petrolioa ekoizten dute</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 1 aciertos, 1 fallos -->
+  <section id="c1w1">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️🖤 &nbsp;&nbsp; 🤖 🔋🔋🔋🔋🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer da Agenda 2030?</h2>
+      <a href="#c1w2">Futbol txapelketa bat</a>
+      <a href="#c2w1">Nazio Batuen 17 helburuko plana, mundua jasangarriagoa izateko</a>
+      <a href="#c1w2">Zentral nuklear baten izena</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 1 aciertos, 2 fallos -->
+  <section id="c1w2">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️🖤🖤 &nbsp;&nbsp; 🤖 🔋🔋🔋🔋🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer egiten dute aerosorgailuek?</h2>
+      <a href="#c2w2">Haizearen indarra elektrizitate bihurtzen dute</a>
+      <a href="Final.html#pierde">Ikatza erretzen dute</a>
+      <a href="Final.html#pierde">Ura berotzen dute</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 2 aciertos, 0 fallos -->
+  <section id="c2w0">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️❤️ &nbsp;&nbsp; 🤖 🔋🔋🔋🪫🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer da Agenda 2030?</h2>
+      <a href="#c2w1">Futbol txapelketa bat</a>
+      <a href="#c3w0">Nazio Batuen 17 helburuko plana, mundua jasangarriagoa izateko</a>
+      <a href="#c2w1">Zentral nuklear baten izena</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 2 aciertos, 1 fallos -->
+  <section id="c2w1">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️🖤 &nbsp;&nbsp; 🤖 🔋🔋🔋🪫🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer egiten dute aerosorgailuek?</h2>
+      <a href="#c3w1">Haizearen indarra elektrizitate bihurtzen dute</a>
+      <a href="#c2w2">Ikatza erretzen dute</a>
+      <a href="#c2w2">Ura berotzen dute</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 2 aciertos, 2 fallos -->
+  <section id="c2w2">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️🖤🖤 &nbsp;&nbsp; 🤖 🔋🔋🔋🪫🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zergatik da arazo bat ikatza edo petrolioa erretzea?</h2>
+      <a href="Final.html#pierde">Ez dute inolako hondakinik uzten</a>
+      <a href="#c3w2">CO2 isurtzen dute eta klima-aldaketa areagotzen dute</a>
+      <a href="Final.html#pierde">Eguzkia ilunago egiten dute</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 3 aciertos, 0 fallos -->
+  <section id="c3w0">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️❤️ &nbsp;&nbsp; 🤖 🔋🔋🪫🪫🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer egiten dute aerosorgailuek?</h2>
+      <a href="#c4w0">Haizearen indarra elektrizitate bihurtzen dute</a>
+      <a href="#c3w1">Ikatza erretzen dute</a>
+      <a href="#c3w1">Ura berotzen dute</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 3 aciertos, 1 fallos -->
+  <section id="c3w1">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️🖤 &nbsp;&nbsp; 🤖 🔋🔋🪫🪫🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zergatik da arazo bat ikatza edo petrolioa erretzea?</h2>
+      <a href="#c3w2">Ez dute inolako hondakinik uzten</a>
+      <a href="#c4w1">CO2 isurtzen dute eta klima-aldaketa areagotzen dute</a>
+      <a href="#c3w2">Eguzkia ilunago egiten dute</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 3 aciertos, 2 fallos -->
+  <section id="c3w2">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️🖤🖤 &nbsp;&nbsp; 🤖 🔋🔋🪫🪫🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer bilatzen du Agenda 2030-eko 7. helburuak?</h2>
+      <a href="Final.html#pierde">Petrolio gehiago ateratzea</a>
+      <a href="Final.html#pierde">Energia garestitzea</a>
+      <a href="#c4w2">Guztiontzat energia eskuragarria eta ez-kutsagarria bermatzea</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 4 aciertos, 0 fallos -->
+  <section id="c4w0">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️❤️ &nbsp;&nbsp; 🤖 🔋🪫🪫🪫🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zergatik da arazo bat ikatza edo petrolioa erretzea?</h2>
+      <a href="#c4w1">Ez dute inolako hondakinik uzten</a>
+      <a href="Final.html#gana">CO2 isurtzen dute eta klima-aldaketa areagotzen dute</a>
+      <a href="#c4w1">Eguzkia ilunago egiten dute</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 4 aciertos, 1 fallos -->
+  <section id="c4w1">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️❤️🖤 &nbsp;&nbsp; 🤖 🔋🪫🪫🪫🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zer bilatzen du Agenda 2030-eko 7. helburuak?</h2>
+      <a href="#c4w2">Petrolio gehiago ateratzea</a>
+      <a href="#c4w2">Energia garestitzea</a>
+      <a href="Final.html#gana">Guztiontzat energia eskuragarria eta ez-kutsagarria bermatzea</a>
+    </div>
+  </section>
+
+  <!-- Pantalla: 4 aciertos, 2 fallos -->
+  <section id="c4w2">
+    <!-- Vidas: tuyas y del jefe -->
+    <p class="vidas">🧑 ❤️🖤🖤 &nbsp;&nbsp; 🤖 🔋🪫🪫🪫🪫</p>
+    <!-- Imagen del jefe -->
+    <img class="boss" src="/Assets/Img/Jefes/Jefe4/jefe_idle.gif" alt="Eguzki Golema">
+    <!-- Pregunta y respuestas -->
+    <div class="caja">
+      <h2>Zein da etxean energia aurrezteko ekintza ona?</h2>
+      <a href="Final.html#gana">LED bonbillak erabiltzea eta behar ez direnean argiak itzaltzea</a>
+      <a href="Final.html#pierde">Argiak piztuta uztea inor ez dagoenean</a>
+      <a href="Final.html#pierde">Berogailua martxan uztea lehioak irekita</a>
+    </div>
+  </section>
+
+</body>
+</html>
