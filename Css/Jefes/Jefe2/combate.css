@@ -46,19 +46,19 @@ section:target {
   width: 600px;
   background: rgba(0, 0, 0, 0.8);
   padding: 20px;
-  border: 3px solid aqua;
+  border: 3px solid rgb(94, 48, 5);
 }
 
 /* Los botones de respuesta */
 a {
   display: block;
-  background: teal;
-  color: white;
+  background: rgb(94, 48, 5);
+  color: rgb(248, 248, 247);
   padding: 10px;
   margin: 8px 0;
   text-decoration: none;
 }
 
 a:hover {
-  background: darkcyan;
+  background: rgb(94, 48, 5);
 }

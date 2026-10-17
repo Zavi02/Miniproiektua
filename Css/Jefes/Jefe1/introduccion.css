@@ -1,7 +1,11 @@
 
 body {
   margin: 0;
+<<<<<<< HEAD
   background: url("/Assets/Img/Jefes/Jefe1/") center / cover;
+=======
+  background: url("/Assets/Img/Jefes/Jefe1/fondo.gif") center / cover;
+>>>>>>> 5b90485e820005a46fca034b7ca43af6f77284c4
   font-family: Arial, sans-serif;
   color: white;
   text-align: center;

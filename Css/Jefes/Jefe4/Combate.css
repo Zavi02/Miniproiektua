@@ -1,0 +1,165 @@
+/* ===== Eguzki Golema - Borroka ===== */
+
+/* COLORES Y FONDO (aquí cambias lo principal) */
+:root {
+  --fondo-1: #1a1410;      /* color oscuro de reserva (arriba) */
+  --fondo-2: #07060a;      /* color oscuro de reserva (abajo) */
+  --piedra: #3b3631;       /* gris de la caja */
+  --piedra-clara: #5a524a; /* gris claro de la caja */
+  --oxido: #b4642a;        /* naranja oxidado */
+  --oro: #e8a93a;          /* dorado de los bordes */
+  --brillo: #ffd34d;       /* amarillo de la pregunta */
+  --nucleo: #ff9a1f;       /* naranja del brillo */
+  --panel-1: #123071;      /* azul oscuro de los botones */
+  --panel-2: #2159b8;      /* azul claro de los botones */
+  --texto: #fff0cf;        /* color del texto */
+
+  /* TU FONDO: cambia aquí la ruta de la imagen */
+  --fondo-img: url('/Assets/Img/Fondos/Eszenatokia.png');
+  /* Oscurece el fondo: 0 = nada, 1 = negro total */
+  --oscurecer: 0.35;
+}
+
+/* Que el tamaño incluya bordes y relleno */
+* { box-sizing: border-box; }
+
+/* PÁGINA */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace; /* letra del sistema, sin descargar nada */
+  font-weight: bold;
+  color: var(--texto);
+  /* capa oscura + tu fondo + degradado de reserva */
+  background:
+    linear-gradient(rgba(0,0,0,var(--oscurecer)), rgba(0,0,0,var(--oscurecer))),
+    var(--fondo-img) center / cover no-repeat,
+    linear-gradient(180deg, var(--fondo-1), var(--fondo-2));
+  background-attachment: fixed;
+}
+
+/* PANTALLAS: solo se ve una a la vez */
+section { display: none; }
+section:target { display: flex; }
+
+/* Si no hay # en la dirección, se ve la primera pantalla */
+body:not(:has(:target)) #c0w0 { display: flex; }
+
+/* Colocar el contenido de cada pantalla en columna y centrado */
+section {
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  padding: 20px 16px 32px;
+}
+
+/* VIDAS (arriba) */
+.vidas {
+  margin: 0;
+  padding: 12px 18px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background: rgba(0,0,0,.55);
+  border: 4px solid var(--oxido);
+  box-shadow: 0 0 0 4px #000, 0 0 18px rgba(255,154,31,.35);
+  border-radius: 2px;
+  text-align: center;
+}
+
+/* JEFE */
+.boss {
+  display: block;
+  height: min(44vh, 420px);   /* altura del jefe */
+  width: auto;
+  max-width: 90%;
+  image-rendering: pixelated; /* mantiene los píxeles nítidos */
+  filter: drop-shadow(0 0 22px rgba(255,154,31,.45)); /* brillo naranja */
+}
+
+/* CAJA DE LA PREGUNTA */
+.caja {
+  width: 100%;
+  max-width: 760px;
+  padding: 22px;
+  background: linear-gradient(180deg, var(--piedra-clara), var(--piedra));
+  border: 4px solid var(--oro);
+  box-shadow:
+    inset 0 0 0 3px #000,
+    0 0 0 4px #000,
+    0 8px 0 4px rgba(0,0,0,.5);
+  animation: entrar .35s steps(6) both;
+}
+
+/* La caja aparece subiendo un poco */
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Texto de la pregunta */
+.caja h2 {
+  margin: 0 0 20px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: var(--brillo);
+  text-shadow: 2px 2px 0 #000, 0 0 10px rgba(255,154,31,.6);
+}
+
+/* BOTONES DE RESPUESTA (como paneles solares) */
+.caja a {
+  display: block;
+  margin-top: 12px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: none;
+  /* rejilla + degradado azul */
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px) 0 0 / 28px 100%,
+    linear-gradient(0deg,  rgba(255,255,255,.12) 1px, transparent 1px) 0 0 / 100% 18px,
+    linear-gradient(180deg, var(--panel-2), var(--panel-1));
+  border: 3px solid var(--oro);
+  box-shadow: 0 0 0 3px #000;
+  cursor: pointer;
+  transition: transform .1s steps(2), box-shadow .15s, filter .15s;
+}
+
+/* Flechita (oculta hasta pasar el ratón) */
+.caja a::before {
+  content: "▶ ";
+  color: var(--nucleo);
+  opacity: 0;
+}
+
+/* Al pasar el ratón: se mueve y brilla */
+.caja a:hover,
+.caja a:focus-visible {
+  outline: none;
+  transform: translateX(6px);
+  filter: brightness(1.25);
+  box-shadow: 0 0 0 3px #000, 0 0 18px var(--nucleo);
+}
+.caja a:hover::before,
+.caja a:focus-visible::before { opacity: 1; }
+
+/* Al hacer clic: baja un poco */
+.caja a:active { transform: translateX(6px) translateY(2px); }
+
+/* MÓVIL: todo un poco más pequeño */
+@media (max-width: 600px) {
+  .vidas { font-size: .9rem; }
+  .boss  { height: 34vh; }
+  .caja  { padding: 16px; }
+  .caja h2 { font-size: 1.1rem; }
+  .caja a  { font-size: .85rem; padding: 12px; }
+}
+
+/* Sin animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .caja { animation: none; }
+  .caja a { transition: none; }
+}
