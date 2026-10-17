@@ -1,39 +1,40 @@
-body {
-  margin: 0;
-  background: url("/Assets/Img/Jefes/Jefe2/fondo_animado.gif") center / cover;
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
-}
+    html, body { margin: 0; min-height: 100%; }
 
-h1 {
-  font-size: 50px;
-}
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;      /* centrado vertical */
+      justify-content: center;  /* centrado horizontal */
+      padding: 20px;
+      box-sizing: border-box;
+      background: url("/Assets/Img/Jefes/Jefe2/fondo_animado.gif") center / cover;
+    }
 
-img {
-  image-rendering: pixelated;
-}
+    .cuadro {
+      width: 100%;
+      max-width: 640px;
+      box-sizing: border-box;
+      padding: 28px 32px;
+      text-align: center;
+      color: #fff;
+      background: rgba(20, 12, 6, .85);
+      border: 3px solid #d9a441;
+      border-radius: 12px;
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, .5), 0 10px 30px rgba(0, 0, 0, .6);
+    }
 
-/* botoiak */
-a {
-  display: inline-block;
-  background: teal;
-  color: white;
-  padding: 12px 24px;
-  margin: 8px;
-  text-decoration: none;
-  font-size: 20px;
-}
+    .cuadro h1 { margin: 0 0 16px; }
+    .cuadro .historia { margin-bottom: 16px; }
+    .cuadro .historia p { margin: 10px 0; line-height: 1.5; }
+    .cuadro img { max-width: 100%; height: auto; }
 
-a:hover {
-  background: darkcyan;
-}
-
-/* Caja con el texto de la historia */
-.historia {
-  width: 600px;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.7);
-  border: 3px solid aqua;
-  padding: 20px;
-}
+    .cuadro a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 28px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #1a0f05;
+      background: #d9a441;
+      border-radius: 8px;
+    }

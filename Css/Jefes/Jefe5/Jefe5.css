@@ -11,8 +11,8 @@
     --zuria: white;
     --zuri-zeharrargia: #ffffff66;
 
-    --zeru-urdin-distira: #00cfff88;     
-    --zeru-urdin-ertza: #7ccfff88;
+    --zeru-urdin-distira: #05050588;     
+    --zeru-urdin-ertza: #14151588;
 
     --haragi-kolorea: #ffad85;        
     --urdin-botoia: #263f59;
@@ -36,10 +36,10 @@
     --biribiltze-handia: 18px;
 
     --bihotz-tamaina: 24px;
-    --buruzagi-zabalera: min(530px, 185vw);
-    --buruzagi-altuera-max: 30vh;
-    --galderen-zabalera-max: 850px;
-    --galderen-altuera-max: 70vh;
+    --buruzagi-zabalera: min(800px, 185vw);
+    --buruzagi-altuera-max: 42.5vh;
+    --galderen-zabalera-max: 800px;
+    --galderen-altuera-max: 80vh;
 
     --trantsizio-denbora: .3s;
 }
@@ -98,7 +98,7 @@ body {
 
 .buruzagia {
     flex: 1;
-    min-height: 140px;
+    min-height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
