@@ -1,59 +1,78 @@
 body {
   margin: 0;
-  background: url("/Assets/Img/Jefes/Jefe3/eszenatokia.gif") center / cover;
-  font-family: Arial, sans-serif;
+  font-family: "VT323", monospace;
   color: white;
 }
 
 section {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/Assets/Img/Jefes/Jefe3/eszenatokia.gif") center / cover;
+  box-sizing: border-box;
+  padding: 15px;
+  flex-direction: column;
+  align-items: center;
+  background: url("/Assets/Img/Jefes/Jefe3/eszenatokia.gif") center / cover no-repeat;
 }
 
 #c0w0 {
-  display: block;
+  display: flex;
 }
 
 section:target {
-  display: block;
+  display: flex;
 }
 
 .vidas {
-  font-size: 30px;
-  margin: 15px;
+  align-self: flex-start;
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 26px;
+  background: rgba(10, 20, 10, 0.9);
+  border: 4px solid #b8d99a;
+  box-shadow: 0 0 0 3px black;
 }
 
 .boss {
-  position: absolute;
-  right: 60px;
-  bottom: 60px;
-  width: 500px;
+  flex: 1;
+  min-height: 0;
+  max-width: 90%;
+  object-fit: contain;
+  margin: 10px 0;
 }
 
 .caja {
-  position: absolute;
-  left: 40px;
-  bottom: 40px;
-  width: 600px;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border: 3px solid lightgreen;
+  width: 900px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  background: rgba(10, 20, 10, 0.92);
+  border: 4px solid #b8d99a;
+  box-shadow: 0 0 0 4px black;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 32px;
+  font-weight: normal;
+  color: #f5c542;
 }
 
 a {
   display: block;
-  background: darkgreen;
-  color: white;
-  padding: 10px;
   margin: 8px 0;
+  padding: 8px 14px;
+  font-size: 26px;
+  color: white;
+  background: #22301f;
+  border: 3px solid #4d6b43;
   text-decoration: none;
 }
 
 a:hover {
-  background: green;
+  background: #3f5a35;
+  border-color: #f5c542;
 }
