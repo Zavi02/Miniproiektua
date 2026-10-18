@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  background: url("/Assets/Img/Jefes/Jefe1/fondo.gif") center / cover;
   font-family: Arial, sans-serif;
   color: white;
+  background: #021;
 }
 
 /* Las pantallas del combate estan escondidas */
@@ -13,32 +13,41 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/Assets/Img/Jefes/Jefe1/fondo.gif") center / cover;
+  background: #021 url("/Assets/Img/Jefes/Jefe1/fondo.gif") center / cover;
 }
 
 /* La primera pantalla se ve siempre al abrir la pagina */
 #c0w0 {
   display: block;
 }
-  
+
 /* Se ve la pantalla a la que apunta el enlace */
 section:target {
   display: block;
 }
 
+/* ---------- Corazones (emoticonos) ---------- */
 .vidas {
-  font-size: 30px;
-  margin: 15px;
+  display: inline-block;
+  margin: 16px 24px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 3px solid aqua;
+  padding: 8px 16px;
+  font-size: 34px;
 }
 
+/* El jefe: centrado en el espacio libre a la derecha de la caja */
 .boss {
   position: absolute;
-  right: 60px;
-  bottom: 60px;
-  width: 800px;
+  left: calc(50% + 343px);
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: min(560px, calc(100vw - 740px), 75vh);
+  height: auto;
   image-rendering: pixelated;
 }
 
+/* Caja de preguntas */
 .caja {
   position: absolute;
   left: 40px;
@@ -49,16 +58,20 @@ section:target {
   border: 3px solid aqua;
 }
 
-/* Los botones de respuesta */
-a {
+.caja h2 {
+  margin: 0 0 12px;
+}
+
+/* Botones de respuesta */
+.caja a {
   display: block;
   background: teal;
-  color: rgb(139, 28, 0);
+  color: white;
   padding: 10px;
   margin: 8px 0;
   text-decoration: none;
 }
 
-a:hover {
-  background: rgb(139, 28, 0);
+.caja a:hover {
+  background: darkcyan;
 }
