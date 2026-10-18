@@ -314,18 +314,6 @@ body:has(.kartak > :nth-child(5 of .zuzena:checked)):not(:has(.zuzena:checked + 
   display: none;
 }
 
-body:has(#b1:checked) .karta:nth-of-type(n+6),
-body:has(#b2:checked) .karta:nth-of-type(n+11),
-body:has(#b3:checked) .karta:nth-of-type(n+16),
-body:has(#b4:checked) .karta:nth-of-type(n+21),
-body:has(#b5:checked) .karta:nth-of-type(n+26),
-body:has(#b6:checked) .karta:nth-of-type(n+31),
-body:has(#b7:checked) .karta:nth-of-type(n+36),
-body:has(#b8:checked) .karta:nth-of-type(n+41),
-body:has(#b9:checked) .karta:nth-of-type(n+46) {
-  order: -1;
-}
-
 .karta h2,
 .amaiera-kutxa h2 {
   margin: 0 0 4px;
@@ -459,31 +447,6 @@ body:has(#b9:checked) .karta:nth-of-type(n+46) {
 
 .amaiera-kutxa .botoia {
   margin: 0 6px;
-}
-
-.ausazko-botoiak {
-  position: relative;
-  width: 280px;
-  height: 64px;
-  margin: 0 auto 6px;
-}
-
-.ausazkoa {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  animation: txandakatu calc(var(--n) * 50ms) steps(1) infinite;
-  animation-delay: calc(var(--i) * -50ms);
-}
-
-.ausazko-botoiak:hover .ausazkoa {
-  animation-play-state: paused;
-}
-
-@keyframes txandakatu {
-  0%   { z-index: 5; }
-  10%  { z-index: 1; }
-  100% { z-index: 1; }
 }
 
 .orria {
