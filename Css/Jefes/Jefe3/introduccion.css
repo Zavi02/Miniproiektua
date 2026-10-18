@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/Assets/Img/Jefes/Jefe3/eszenatokia.gif") center / cover no-repeat fixed;
+  font-family: "VT323", monospace;
+  font-size: 24px;
+  color: white;
+}
+
+.panela {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 950px;
+  max-width: 92%;
+  padding: 30px;
+  background: rgba(10, 20, 10, 0.9);
+  border: 4px solid #b8d99a;
+  box-shadow: 0 0 0 4px black;
+}
+
+.testua {
+  flex: 1;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 30px;
+  color: #f5c542;
+  text-shadow: 4px 4px 0 black;
+}
+
+h2 {
+  margin: 0 0 15px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 13px;
+  color: #b8d99a;
+}
+
+p {
+  margin: 0 0 12px;
+  line-height: 1;
+}
+
+img {
+  animation: mugitu 2s ease-in-out infinite;
+  width: 380px;
+  max-width: 40%;
+}
+
+.botoia {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 15px 30px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 15px;
+  color: #1f3a1c;
+  background: #b8d99a;
+  border: 4px solid black;
+  text-decoration: none;
+}
+
+.botoia:hover {
+  background: #f5c542;
+}
+
+@keyframes mugitu {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-8px) rotate(-2deg); }
+  50%  { transform: translateY(-15px) rotate(0deg); }
+  75%  { transform: translateY(-8px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
