@@ -1,21 +1,40 @@
-
+html {
+  height: 100%;
+}
+ 
 body {
   margin: 0;
-  background: url("/Assets/Img/Jefes/Jefe1/fondo.gif") center / cover;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 24px 16px;
+ 
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+
+  background: #021 url("/Assets/Img/Jefes/Jefe1/fondo.gif") center / cover no-repeat fixed;
+ 
   font-family: Arial, sans-serif;
   color: white;
   text-align: center;
 }
-
+ 
 h1 {
-  font-size: 50px;
+  margin: 0 0 16px;
+  font-size: clamp(32px, 6vh, 50px);
 }
-
+ 
 img {
   image-rendering: pixelated;
+  height: clamp(220px, 38vh, 560px);
+  width: auto;
+  max-width: 100%;
 }
+ 
 
-/* botoiak */
 a {
   display: inline-block;
   background: teal;
@@ -25,15 +44,17 @@ a {
   text-decoration: none;
   font-size: 20px;
 }
-
+ 
 a:hover {
   background: darkcyan;
 }
+ 
 
-/* Caja con el texto de la historia */
 .historia {
   width: 600px;
-  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto 16px;
   background: rgba(0, 0, 0, 0.7);
   border: 3px solid aqua;
   padding: 20px;
