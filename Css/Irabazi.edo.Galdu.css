@@ -44,7 +44,7 @@ h1 {
   transform: translateX(-50%) scale(1.07);
 }
 
-/* Garaipena */
+
 #gana { background-image: url("fondo_irabazi.png"); }
 #gana h1 {
   color: #fff7c2;
@@ -56,7 +56,7 @@ h1 {
 }
 #gana .botoia:hover { background: #2fb866; }
 
-/* Porrota */
+
 #galdu {
   display: none;
   background-image: url("fondo_galdu.png");
