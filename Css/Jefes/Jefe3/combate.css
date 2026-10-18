@@ -37,6 +37,7 @@ section:target {
 }
 
 .boss {
+  animation: mugitu 2s ease-in-out infinite;
   flex: 1;
   min-height: 0;
   max-width: 90%;
@@ -75,4 +76,12 @@ a {
 a:hover {
   background: #3f5a35;
   border-color: #f5c542;
+}
+
+@keyframes mugitu {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-8px) rotate(-2deg); }
+  50%  { transform: translateY(-15px) rotate(0deg); }
+  75%  { transform: translateY(-8px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }

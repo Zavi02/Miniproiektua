@@ -47,6 +47,7 @@ p {
 }
 
 img {
+  animation: mugitu 2s ease-in-out infinite;
   width: 380px;
   max-width: 40%;
 }
@@ -65,4 +66,12 @@ img {
 
 .botoia:hover {
   background: #f5c542;
+}
+
+@keyframes mugitu {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-8px) rotate(-2deg); }
+  50%  { transform: translateY(-15px) rotate(0deg); }
+  75%  { transform: translateY(-8px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
